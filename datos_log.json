@@ -1,5 +1,15 @@
 [
   {
+    "ts": "24-05-2026, 7:32:36 p. m.",
+    "user": "oscar",
+    "code": "3655907",
+    "desc": "MANGA SCD EXPRESS AL MUSLO \"XL\"",
+    "mod": "farmacia",
+    "action": "add",
+    "detail": "Agregado P.7 / 2A",
+    "motivo": ""
+  },
+  {
     "ts": "24-05-2026, 7:27:26 p. m.",
     "user": "oscar",
     "code": "41306062",
@@ -37,6 +47,6 @@
     "mod": "bodega",
     "action": "del",
     "detail": "Eliminado S.Estacionamiento / B. Estadionamiento",
-    "motivo": "ya no se guarda ahí"
+    "motivo": "ya no se guarda ahÃ­"
   }
 ]
