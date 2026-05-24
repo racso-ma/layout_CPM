@@ -450,7 +450,7 @@ async function loadFromGitHub() {
   document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
   document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
   buildMapF(); buildMapB(); renderLog();
-  showSyncStatus('✅ Datos sincronizados', 3000);
+  showSyncStatus('✅ Datos sincronizados', 3000); setTimeout(updateTokenStatus, 200);
 }
 
 async function saveToGitHub() {
@@ -458,21 +458,23 @@ async function saveToGitHub() {
     if (!promptToken()) { showToast('⚠️ Sin token — cambio guardado solo localmente', 'warn'); return; }
   }
   showSyncStatus('⏳ Guardando en la nube…');
-  const [okF, okB, okL] = await Promise.all([
-    ghPut(GH.fileF, workF, shaF),
-    ghPut(GH.fileB, workB, shaB),
-    ghPut(GH.fileLog, changelog, shaLog)
-  ]);
-  if (okF && okB && okL) {
-    // Refresh SHAs
-    const [rf, rb, rl] = await Promise.all([ghGet(GH.fileF), ghGet(GH.fileB), ghGet(GH.fileLog)]);
-    if (rf.sha) shaF = rf.sha;
-    if (rb.sha) shaB = rb.sha;
-    if (rl.sha) shaLog = rl.sha;
-    showSyncStatus('✅ Guardado en la nube', 3000);
-  } else {
-    showSyncStatus('⚠️ Error al guardar — reintentando…');
-    showToast('⚠️ Error de sincronización con GitHub', 'warn');
+  try {
+    // Sequential writes to avoid 409 conflicts
+    const okF = await ghPut(GH.fileF, workF, shaF);
+    if (okF) { const rf = await ghGet(GH.fileF); if (rf.sha) shaF = rf.sha; }
+    const okB = await ghPut(GH.fileB, workB, shaB);
+    if (okB) { const rb = await ghGet(GH.fileB); if (rb.sha) shaB = rb.sha; }
+    const okL = await ghPut(GH.fileLog, changelog, shaLog);
+    if (okL) { const rl = await ghGet(GH.fileLog); if (rl.sha) shaLog = rl.sha; }
+    if (okF && okB && okL) {
+      showSyncStatus('✅ Guardado en la nube', 3000);
+    } else {
+      showSyncStatus('⚠️ Guardado parcial — reintenta', 4000);
+      showToast('⚠️ Guardado parcial — intenta de nuevo', 'warn');
+    }
+  } catch(e) {
+    showSyncStatus('⚠️ Error de red', 4000);
+    showToast('⚠️ Error de sincronización', 'warn');
   }
 }
 
@@ -866,8 +868,8 @@ function configToken() {
 function updateTokenStatus() {
   const el = document.getElementById('token-status');
   if (!el) return;
-  const t = localStorage.getItem('laymap_gh_token');
-  el.textContent = t ? '✅ Token configurado (...'+t.slice(-6)+')' : '⚠️ Sin token — cambios no se sincronizan';
+  const t = getToken();
+  el.textContent = t ? '✅ Sincronización activa' : '⚠️ Sin token — cambios no se sincronizan';
   el.style.color = t ? 'var(--green)' : 'var(--orange)';
 }
 
@@ -881,7 +883,7 @@ function showToast(msg, type) {
 
 // Initialize editor action display
 setAction('add');
-updateTokenStatus();
+setTimeout(updateTokenStatus, 100);
 </script>
 </body>
 </html>
