@@ -399,8 +399,7 @@ const GH = {
 };
 
 function getToken() {
-  if (!GH.token) GH.token = localStorage.getItem('laymap_gh_token');
-  return GH.token;
+  return GH.token || localStorage.getItem('laymap_gh_token') || null;
 }
 
 function promptToken() {
