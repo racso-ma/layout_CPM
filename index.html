@@ -287,7 +287,13 @@ mark{background:#fff3b0;color:#7a5c00;border-radius:2px;padding:0 1px}
 
 <!-- EDITOR -->
 <div class="page" id="page-editor">
-  <div class="page-header"><div><h1>Editor de Ubicaciones</h1><div class="sub">Agregar, modificar o eliminar ubicaciones · cada cambio queda registrado</div></div></div>
+  <div class="page-header">
+    <div><h1>Editor de Ubicaciones</h1><div class="sub">Agregar, modificar o eliminar ubicaciones · cada cambio queda registrado</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+      <div id="token-status" style="font-family:IBM Plex Mono,monospace;font-size:11px;color:var(--text-muted)"></div>
+      <button onclick="configToken()" style="padding:6px 12px;background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-mid);border-radius:var(--radius);font-size:11px;font-weight:600;cursor:pointer">🔑 Configurar token</button>
+    </div>
+  </div>
   <div class="editor-grid">
     <div class="form-card">
       <div class="form-card-header">✏️ Gestión de Ubicaciones</div>
@@ -383,7 +389,7 @@ let workB = DATA_B.map(r => ({...r, ubicaciones: r.ubicaciones.map(u => ({...u})
 // GITHUB SYNC CONFIG
 // ============================
 const GH = {
-  token: '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',
+  token: null,
   owner: 'racso-ma',
   repo:  'layout_CPM',
   branch: 'main',
@@ -392,10 +398,28 @@ const GH = {
   fileLog: 'datos_log.json'
 };
 
+function getToken() {
+  if (!GH.token) GH.token = localStorage.getItem('laymap_gh_token');
+  return GH.token;
+}
+
+function promptToken() {
+  const t = prompt('Ingresa tu GitHub Personal Access Token para sincronizar cambios:');
+  if (t && t.trim().startsWith('ghp_')) {
+    GH.token = t.trim();
+    localStorage.setItem('laymap_gh_token', GH.token);
+    return true;
+  } else if (t) {
+    alert('Token inválido. Debe comenzar con ghp_');
+    return false;
+  }
+  return false;
+}
+
 async function ghGet(filename) {
   try {
     const r = await fetch('https://api.github.com/repos/'+GH.owner+'/'+GH.repo+'/contents/'+filename+'?ref='+GH.branch, {
-      headers: { 'Authorization': 'token '+GH.token, 'Accept': 'application/vnd.github.v3+json' }
+      headers: { 'Authorization': 'token '+getToken(), 'Accept': 'application/vnd.github.v3+json' }
     });
     if (r.status === 404) return { content: null, sha: null };
     const d = await r.json();
@@ -409,7 +433,7 @@ async function ghPut(filename, content, sha) {
   if (sha) body.sha = sha;
   const r = await fetch('https://api.github.com/repos/'+GH.owner+'/'+GH.repo+'/contents/'+filename, {
     method: 'PUT',
-    headers: { 'Authorization': 'token '+GH.token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+    headers: { 'Authorization': 'token '+getToken(), 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
   return r.ok;
@@ -418,6 +442,7 @@ async function ghPut(filename, content, sha) {
 let shaF = null, shaB = null, shaLog = null;
 
 async function loadFromGitHub() {
+  if (!getToken()) { showSyncStatus(''); return; }
   showSyncStatus('⏳ Cargando datos desde la nube…');
   const [rf, rb, rl] = await Promise.all([ghGet(GH.fileF), ghGet(GH.fileB), ghGet(GH.fileLog)]);
   if (rf.content) { workF = rf.content; shaF = rf.sha; }
@@ -430,6 +455,9 @@ async function loadFromGitHub() {
 }
 
 async function saveToGitHub() {
+  if (!getToken()) {
+    if (!promptToken()) { showToast('⚠️ Sin token — cambio guardado solo localmente', 'warn'); return; }
+  }
   showSyncStatus('⏳ Guardando en la nube…');
   const [okF, okB, okL] = await Promise.all([
     ghPut(GH.fileF, workF, shaF),
@@ -821,6 +849,29 @@ function exportLog() {
   showToast('✅ Log exportado como CSV');
 }
 
+function configToken() {
+  const current = localStorage.getItem('laymap_gh_token');
+  const msg = current ? 'Token actual: ...'+current.slice(-6)+'\n\nIngresa uno nuevo (o cancela para mantener el actual):' : 'Ingresa tu GitHub Personal Access Token:';
+  const t = prompt(msg);
+  if (t && t.trim().startsWith('ghp_')) {
+    GH.token = t.trim();
+    localStorage.setItem('laymap_gh_token', GH.token);
+    updateTokenStatus();
+    showToast('✅ Token guardado correctamente');
+    loadFromGitHub();
+  } else if (t) {
+    alert('Token inválido. Debe comenzar con ghp_');
+  }
+}
+
+function updateTokenStatus() {
+  const el = document.getElementById('token-status');
+  if (!el) return;
+  const t = localStorage.getItem('laymap_gh_token');
+  el.textContent = t ? '✅ Token configurado (...'+t.slice(-6)+')' : '⚠️ Sin token — cambios no se sincronizan';
+  el.style.color = t ? 'var(--green)' : 'var(--orange)';
+}
+
 function showToast(msg, type) {
   const t=document.getElementById('toast');
   document.getElementById('toast-msg').textContent=msg;
@@ -831,6 +882,7 @@ function showToast(msg, type) {
 
 // Initialize editor action display
 setAction('add');
+updateTokenStatus();
 </script>
 </body>
 </html>
