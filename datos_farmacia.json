@@ -221,7 +221,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -239,7 +239,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -257,7 +257,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -289,7 +289,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -307,7 +307,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -397,7 +397,7 @@
   },
   {
     "codigo": "3655555",
-    "descripcion": "MARIPOSA Nº 25",
+    "descripcion": "MARIPOSA NÂº 25",
     "ubicaciones": [
       {
         "pasillo": "1",
@@ -419,7 +419,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -451,7 +451,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -469,7 +469,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -501,7 +501,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -519,7 +519,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -663,7 +663,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -695,7 +695,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -713,7 +713,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -755,7 +755,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -787,7 +787,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -839,7 +839,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -857,7 +857,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -917,7 +917,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1067,7 +1067,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       },
       {
         "pasillo": "25",
@@ -1307,7 +1307,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1375,7 +1375,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1477,7 +1477,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1591,7 +1591,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       },
       {
         "pasillo": "25",
@@ -1661,7 +1661,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1831,7 +1831,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1849,7 +1849,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1867,7 +1867,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -1887,7 +1887,7 @@
   },
   {
     "codigo": "3250061",
-    "descripcion": "GUANTES QUIRURG.ESTERILES N° 6 1/2",
+    "descripcion": "GUANTES QUIRURG.ESTERILES NÂ° 6 1/2",
     "ubicaciones": [
       {
         "pasillo": "1",
@@ -1901,7 +1901,7 @@
   },
   {
     "codigo": "3250071",
-    "descripcion": "GUANTES QUIRURG.ESTERILES N° 7.0",
+    "descripcion": "GUANTES QUIRURG.ESTERILES NÂ° 7.0",
     "ubicaciones": [
       {
         "pasillo": "1",
@@ -1915,7 +1915,7 @@
   },
   {
     "codigo": "3250081",
-    "descripcion": "GUANTES QUIRURG.ESTERILES N°7 1/2",
+    "descripcion": "GUANTES QUIRURG.ESTERILES NÂ°7 1/2",
     "ubicaciones": [
       {
         "pasillo": "1",
@@ -1929,7 +1929,7 @@
   },
   {
     "codigo": "3250091",
-    "descripcion": "GUANTES QUIRURG.ESTERILES N° 8.0",
+    "descripcion": "GUANTES QUIRURG.ESTERILES NÂ° 8.0",
     "ubicaciones": [
       {
         "pasillo": "1",
@@ -1943,7 +1943,7 @@
   },
   {
     "codigo": "3250101",
-    "descripcion": "GUANTES QUIRURG.ESTERILES N° 8 1/2",
+    "descripcion": "GUANTES QUIRURG.ESTERILES NÂ° 8 1/2",
     "ubicaciones": [
       {
         "pasillo": "1",
@@ -2029,7 +2029,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2069,7 +2069,7 @@
   },
   {
     "codigo": "3654367",
-    "descripcion": "BATA PEDIATRICO 3-6 AÑOS 55X80CM",
+    "descripcion": "BATA PEDIATRICO 3-6 AÃOS 55X80CM",
     "ubicaciones": [
       {
         "pasillo": "2",
@@ -2079,7 +2079,7 @@
   },
   {
     "codigo": "3654368",
-    "descripcion": "BATA PEDIATRICO 6- 12 AÑOS 65X90 CM",
+    "descripcion": "BATA PEDIATRICO 6- 12 AÃOS 65X90 CM",
     "ubicaciones": [
       {
         "pasillo": "2",
@@ -2089,7 +2089,7 @@
   },
   {
     "codigo": "3654366",
-    "descripcion": "BATA PEDIATRICA 0-3 AÑOS 45X70CM",
+    "descripcion": "BATA PEDIATRICA 0-3 AÃOS 45X70CM",
     "ubicaciones": [
       {
         "pasillo": "2",
@@ -2117,7 +2117,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2131,7 +2131,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2193,7 +2193,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2225,7 +2225,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2243,7 +2243,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2341,7 +2341,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2373,7 +2373,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2391,7 +2391,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2423,7 +2423,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2539,7 +2539,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2655,7 +2655,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2683,7 +2683,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2701,7 +2701,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2785,7 +2785,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2827,7 +2827,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2845,7 +2845,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2897,7 +2897,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2943,7 +2943,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -2961,7 +2961,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4295,7 +4295,7 @@
   },
   {
     "codigo": "3654362",
-    "descripcion": "MASCARILLA Nº95 3M 1870",
+    "descripcion": "MASCARILLA NÂº95 3M 1870",
     "ubicaciones": [
       {
         "pasillo": "2",
@@ -4539,7 +4539,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4571,7 +4571,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4617,7 +4617,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4635,7 +4635,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4709,7 +4709,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4741,7 +4741,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4791,7 +4791,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4849,7 +4849,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -4863,7 +4863,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -5221,7 +5221,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -5325,7 +5325,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -5339,7 +5339,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -5677,7 +5677,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -5831,7 +5831,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6065,7 +6065,7 @@
   },
   {
     "codigo": "40702727",
-    "descripcion": "ENDOCANULA Nº 8 7IC80 (NUEVO FORMATO)",
+    "descripcion": "ENDOCANULA NÂº 8 7IC80 (NUEVO FORMATO)",
     "ubicaciones": [
       {
         "pasillo": "5",
@@ -6075,7 +6075,7 @@
   },
   {
     "codigo": "40702730",
-    "descripcion": "ENDOCANULA Nº 9 REF 9IC90",
+    "descripcion": "ENDOCANULA NÂº 9 REF 9IC90",
     "ubicaciones": [
       {
         "pasillo": "5",
@@ -6349,7 +6349,7 @@
   },
   {
     "codigo": "43700511",
-    "descripcion": "MÁSCARA ORONASAL TALLA M",
+    "descripcion": "MÃSCARA ORONASAL TALLA M",
     "ubicaciones": [
       {
         "pasillo": "5",
@@ -6377,7 +6377,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6531,7 +6531,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6555,7 +6555,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6599,7 +6599,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6685,7 +6685,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6709,7 +6709,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6733,7 +6733,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6747,7 +6747,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6771,7 +6771,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6785,7 +6785,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6829,7 +6829,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6857,7 +6857,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -6875,7 +6875,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7005,7 +7005,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7023,7 +7023,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7051,7 +7051,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7065,7 +7065,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7089,7 +7089,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7103,7 +7103,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7117,7 +7117,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7131,7 +7131,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7145,7 +7145,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7159,7 +7159,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7243,7 +7243,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7317,7 +7317,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7351,7 +7351,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7385,7 +7385,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7439,7 +7439,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7513,7 +7513,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7597,7 +7597,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7631,7 +7631,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7675,7 +7675,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7709,7 +7709,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7723,7 +7723,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7747,7 +7747,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -7781,7 +7781,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8014,7 +8014,12 @@
   {
     "codigo": "3655907",
     "descripcion": "MANGA SCD EXPRESS AL MUSLO \"XL\"",
-    "ubicaciones": []
+    "ubicaciones": [
+      {
+        "pasillo": "7",
+        "ubicacion": "2A"
+      }
+    ]
   },
   {
     "codigo": "3650351",
@@ -8048,7 +8053,7 @@
   },
   {
     "codigo": "3451100",
-    "descripcion": "MASCARA LARINGEA FASTRACH N°3",
+    "descripcion": "MASCARA LARINGEA FASTRACH NÂ°3",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8108,7 +8113,7 @@
   },
   {
     "codigo": "3656639",
-    "descripcion": "MASCARA LARINGEA N°5 (I-GEL) INTERSURGICAL",
+    "descripcion": "MASCARA LARINGEA NÂ°5 (I-GEL) INTERSURGICAL",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8118,7 +8123,7 @@
   },
   {
     "codigo": "3150429",
-    "descripcion": "CATETER EPIDURAL Nº 16 PERIFIX",
+    "descripcion": "CATETER EPIDURAL NÂº 16 PERIFIX",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8168,7 +8173,7 @@
   },
   {
     "codigo": "3150461",
-    "descripcion": "SET PERIFIX Nº 402 REF4514025C",
+    "descripcion": "SET PERIFIX NÂº 402 REF4514025C",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8218,7 +8223,7 @@
   },
   {
     "codigo": "3300587",
-    "descripcion": "STIMUPLEX ULTRA 360° 22GX3 1/8 80MM",
+    "descripcion": "STIMUPLEX ULTRA 360Â° 22GX3 1/8 80MM",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8228,7 +8233,7 @@
   },
   {
     "codigo": "3656560",
-    "descripcion": "STIMUPLEX ULTRA 360° G22 X 50 MM",
+    "descripcion": "STIMUPLEX ULTRA 360Â° G22 X 50 MM",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8236,7 +8241,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8350,7 +8355,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8384,7 +8389,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8398,7 +8403,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8424,7 +8429,7 @@
   },
   {
     "codigo": "3654058",
-    "descripcion": "CIRCUITO ANESTESIA NIÑO ST. REF 8081",
+    "descripcion": "CIRCUITO ANESTESIA NIÃO ST. REF 8081",
     "ubicaciones": [
       {
         "pasillo": "7",
@@ -8442,7 +8447,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8456,7 +8461,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8470,7 +8475,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8508,7 +8513,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -8648,7 +8653,7 @@
   },
   {
     "codigo": "3450111",
-    "descripcion": "CANULA MAYO (100 MM/Nº4)",
+    "descripcion": "CANULA MAYO (100 MM/NÂº4)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8658,7 +8663,7 @@
   },
   {
     "codigo": "3450121",
-    "descripcion": "CANULA MAYO (110 MM/Nº5)",
+    "descripcion": "CANULA MAYO (110 MM/NÂº5)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8668,7 +8673,7 @@
   },
   {
     "codigo": "3450081",
-    "descripcion": "CANULA MAYO (120 MM/Nº6)",
+    "descripcion": "CANULA MAYO (120 MM/NÂº6)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8678,7 +8683,7 @@
   },
   {
     "codigo": "3450646",
-    "descripcion": "CANULA MAYO (50MM/Nº 00)",
+    "descripcion": "CANULA MAYO (50MM/NÂº 00)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8688,7 +8693,7 @@
   },
   {
     "codigo": "3450071",
-    "descripcion": "CANULA MAYO (60 MM/Nº0)",
+    "descripcion": "CANULA MAYO (60 MM/NÂº0)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8698,7 +8703,7 @@
   },
   {
     "codigo": "3450591",
-    "descripcion": "CANULA MAYO (70 MM/Nº1)",
+    "descripcion": "CANULA MAYO (70 MM/NÂº1)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8708,7 +8713,7 @@
   },
   {
     "codigo": "3450091",
-    "descripcion": "CANULA MAYO (80 MM/ Nº2)",
+    "descripcion": "CANULA MAYO (80 MM/ NÂº2)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8718,7 +8723,7 @@
   },
   {
     "codigo": "3450101",
-    "descripcion": "CANULA MAYO (90 MM/ Nº3)",
+    "descripcion": "CANULA MAYO (90 MM/ NÂº3)",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -8838,7 +8843,7 @@
   },
   {
     "codigo": "43700465",
-    "descripcion": "AGUJA DE VERRES 120MM PUNTA RETRACTIL CONECCIÓN LUER LOCK",
+    "descripcion": "AGUJA DE VERRES 120MM PUNTA RETRACTIL CONECCIÃN LUER LOCK",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -9014,7 +9019,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9048,7 +9053,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9092,7 +9097,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9106,7 +9111,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9140,7 +9145,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9174,7 +9179,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9326,7 +9331,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9372,7 +9377,7 @@
   },
   {
     "codigo": "41206721",
-    "descripcion": "HOJA DESCARTABLE N°02 REF350-017-000",
+    "descripcion": "HOJA DESCARTABLE NÂ°02 REF350-017-000",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -9382,7 +9387,7 @@
   },
   {
     "codigo": "42901401",
-    "descripcion": "HOJA DESCARTABLE N°03 REF350-005-000",
+    "descripcion": "HOJA DESCARTABLE NÂ°03 REF350-005-000",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -9396,7 +9401,7 @@
   },
   {
     "codigo": "41206719",
-    "descripcion": "HOJA DESCARTABLE N°04 REF350-013-000",
+    "descripcion": "HOJA DESCARTABLE NÂ°04 REF350-013-000",
     "ubicaciones": [
       {
         "pasillo": "8",
@@ -9550,7 +9555,7 @@
   },
   {
     "codigo": "3450854",
-    "descripcion": "TUBO ENDOTR.PREF.NASAL C/C N°4.5",
+    "descripcion": "TUBO ENDOTR.PREF.NASAL C/C NÂ°4.5",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -9560,7 +9565,7 @@
   },
   {
     "codigo": "3450892",
-    "descripcion": "TUBO ENDOTR.PREF.NASAL C/C N°5.5",
+    "descripcion": "TUBO ENDOTR.PREF.NASAL C/C NÂ°5.5",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -9570,7 +9575,7 @@
   },
   {
     "codigo": "3450866",
-    "descripcion": "TUBO ENDOTR.PREF.NASAL S/C N°4.5",
+    "descripcion": "TUBO ENDOTR.PREF.NASAL S/C NÂ°4.5",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -9580,7 +9585,7 @@
   },
   {
     "codigo": "3450907",
-    "descripcion": "TUBO ENDOTR.PREF.NASAL S/C N°5.0",
+    "descripcion": "TUBO ENDOTR.PREF.NASAL S/C NÂ°5.0",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -9640,7 +9645,7 @@
   },
   {
     "codigo": "3450842",
-    "descripcion": "TUBO ENDOTRAQ.PREF.NASAL C/C N°5.0",
+    "descripcion": "TUBO ENDOTRAQ.PREF.NASAL C/C NÂ°5.0",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -9786,7 +9791,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9804,7 +9809,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -9822,7 +9827,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -10194,7 +10199,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -10238,7 +10243,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -10468,7 +10473,7 @@
   },
   {
     "codigo": "3050808",
-    "descripcion": "AGUJA AUTOMÁTICA TRU-CORE II DE 16G X 10 CM (MD763116100X)",
+    "descripcion": "AGUJA AUTOMÃTICA TRU-CORE II DE 16G X 10 CM (MD763116100X)",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -10618,7 +10623,7 @@
   },
   {
     "codigo": "3400527",
-    "descripcion": "SONDA GASTRICA CALIBRACION Nº36",
+    "descripcion": "SONDA GASTRICA CALIBRACION NÂº36",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -10696,7 +10701,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -10750,7 +10755,7 @@
   },
   {
     "codigo": "3150561",
-    "descripcion": "CATETER EMBOLECTOMIA FOGARTY N°2",
+    "descripcion": "CATETER EMBOLECTOMIA FOGARTY NÂ°2",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -10760,7 +10765,7 @@
   },
   {
     "codigo": "3150031",
-    "descripcion": "CATETER ENBOLECTOMIA FOGARTY N°3",
+    "descripcion": "CATETER ENBOLECTOMIA FOGARTY NÂ°3",
     "ubicaciones": [
       {
         "pasillo": "9",
@@ -10840,7 +10845,7 @@
   },
   {
     "codigo": "3656449",
-    "descripcion": "EMPUJADOR DE PRÓTESIS 8.5 FR",
+    "descripcion": "EMPUJADOR DE PRÃTESIS 8.5 FR",
     "ubicaciones": [
       {
         "pasillo": "10",
@@ -11114,7 +11119,7 @@
   },
   {
     "codigo": "3400420",
-    "descripcion": "SONDA NASOG. DESECH. Nº 10",
+    "descripcion": "SONDA NASOG. DESECH. NÂº 10",
     "ubicaciones": [
       {
         "pasillo": "10",
@@ -11726,7 +11731,7 @@
   },
   {
     "codigo": "3451054",
-    "descripcion": "MASCARILLA ANESTESIA N°6",
+    "descripcion": "MASCARILLA ANESTESIA NÂ°6",
     "ubicaciones": [
       {
         "pasillo": "10",
@@ -11734,13 +11739,13 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
   {
     "codigo": "3651141",
-    "descripcion": "MASCARILLA ANESTESIA TRANS N°3 MORADA",
+    "descripcion": "MASCARILLA ANESTESIA TRANS NÂ°3 MORADA",
     "ubicaciones": [
       {
         "pasillo": "10",
@@ -11758,7 +11763,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -11794,7 +11799,7 @@
   },
   {
     "codigo": "3656441",
-    "descripcion": "RESUCITADOR MANUAL PEDIÁTRICO DESECH.MEDIBAG SPUR II",
+    "descripcion": "RESUCITADOR MANUAL PEDIÃTRICO DESECH.MEDIBAG SPUR II",
     "ubicaciones": [
       {
         "pasillo": "10",
@@ -11924,7 +11929,7 @@
   },
   {
     "codigo": "3656353",
-    "descripcion": "COLLAR MIAMI GEROME 6 A 12 AÑOS",
+    "descripcion": "COLLAR MIAMI GEROME 6 A 12 AÃOS",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -11934,7 +11939,7 @@
   },
   {
     "codigo": "3800365",
-    "descripcion": "INMOVILIZADOR DE MUÑECA HM-16 \"L\"",
+    "descripcion": "INMOVILIZADOR DE MUÃECA HM-16 \"L\"",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -11944,7 +11949,7 @@
   },
   {
     "codigo": "3800367",
-    "descripcion": "INMOVILIZADOR DE MUÑECA HM-16 \"M\"",
+    "descripcion": "INMOVILIZADOR DE MUÃECA HM-16 \"M\"",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -11954,7 +11959,7 @@
   },
   {
     "codigo": "3800369",
-    "descripcion": "INMOVILIZADOR DE MUÑECA HM-16 \"S\"",
+    "descripcion": "INMOVILIZADOR DE MUÃECA HM-16 \"S\"",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12044,7 +12049,7 @@
   },
   {
     "codigo": "3656645",
-    "descripcion": "FIJADOR EXTERNO MUÑECA",
+    "descripcion": "FIJADOR EXTERNO MUÃECA",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12084,7 +12089,7 @@
   },
   {
     "codigo": "3656703",
-    "descripcion": "COLLAR SERVICAL SEMIRIGIDO PED 4-6 AÑOS (VARIEDAD COLORES) REF BK02-1",
+    "descripcion": "COLLAR SERVICAL SEMIRIGIDO PED 4-6 AÃOS (VARIEDAD COLORES) REF BK02-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12124,7 +12129,7 @@
   },
   {
     "codigo": "3350835",
-    "descripcion": "CABESTRILLO TALLA XS 12-14 AÑOS (VARIEDAD COLORES) REF BK05-3",
+    "descripcion": "CABESTRILLO TALLA XS 12-14 AÃOS (VARIEDAD COLORES) REF BK05-3",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12134,7 +12139,7 @@
   },
   {
     "codigo": "3656697",
-    "descripcion": "CABESTRILLO TALLA XS 4-6 AÑOS (VARIEDAD COLORES) REF BK05-1",
+    "descripcion": "CABESTRILLO TALLA XS 4-6 AÃOS (VARIEDAD COLORES) REF BK05-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12144,7 +12149,7 @@
   },
   {
     "codigo": "3656698",
-    "descripcion": "CABESTRILLO TALLA XS 8-10 AÑOS (VARIEDAD COLORES) REF BK05-2",
+    "descripcion": "CABESTRILLO TALLA XS 8-10 AÃOS (VARIEDAD COLORES) REF BK05-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12154,7 +12159,7 @@
   },
   {
     "codigo": "3656705",
-    "descripcion": "COLLAR SERVICAL SEMIRIGIDO PED 12-14 AÑOS (VARIEDAD COLORES) REF BK02-3",
+    "descripcion": "COLLAR SERVICAL SEMIRIGIDO PED 12-14 AÃOS (VARIEDAD COLORES) REF BK02-3",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12164,7 +12169,7 @@
   },
   {
     "codigo": "3656704",
-    "descripcion": "COLLAR SERVICAL SEMIRIGIDO PED 8-10 AÑOS (VARIEDAD COLORES) REF BK02-2",
+    "descripcion": "COLLAR SERVICAL SEMIRIGIDO PED 8-10 AÃOS (VARIEDAD COLORES) REF BK02-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12174,7 +12179,7 @@
   },
   {
     "codigo": "3656712",
-    "descripcion": "INMOVILIZADOR DE HOMBRO PED 12-14 AÑOS (VARIEDAD COLORES) REF BK07-3",
+    "descripcion": "INMOVILIZADOR DE HOMBRO PED 12-14 AÃOS (VARIEDAD COLORES) REF BK07-3",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12184,7 +12189,7 @@
   },
   {
     "codigo": "3656711",
-    "descripcion": "INMOVILIZADOR DE HOMBRO PED 8-10 AÑOS (VARIEDAD COLORES) REF BK07-2",
+    "descripcion": "INMOVILIZADOR DE HOMBRO PED 8-10 AÃOS (VARIEDAD COLORES) REF BK07-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12194,7 +12199,7 @@
   },
   {
     "codigo": "3656708",
-    "descripcion": "MUÑEQUERA INM. DERECHA PED 4-6 AÑOS (VARIEDAD COLORES) REF BK10D-1",
+    "descripcion": "MUÃEQUERA INM. DERECHA PED 4-6 AÃOS (VARIEDAD COLORES) REF BK10D-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12204,7 +12209,7 @@
   },
   {
     "codigo": "3656706",
-    "descripcion": "MUÑEQUERA INM. IZQUIERDA PED 4-6 AÑOS (VARIEDAD COLORES) REF BK10I-1",
+    "descripcion": "MUÃEQUERA INM. IZQUIERDA PED 4-6 AÃOS (VARIEDAD COLORES) REF BK10I-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12224,7 +12229,7 @@
   },
   {
     "codigo": "3800822",
-    "descripcion": "INMOVILIZADOR DEDO PULGAR PED 4-6 AÑOS (VARIEDAD COLORES) REF BK11-1",
+    "descripcion": "INMOVILIZADOR DEDO PULGAR PED 4-6 AÃOS (VARIEDAD COLORES) REF BK11-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12234,7 +12239,7 @@
   },
   {
     "codigo": "3656710",
-    "descripcion": "INMOVILIZADOR DEDO PULGAR PED 8-10 AÑOS (VARIEDAD COLORES) REF BK11-2",
+    "descripcion": "INMOVILIZADOR DEDO PULGAR PED 8-10 AÃOS (VARIEDAD COLORES) REF BK11-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12244,7 +12249,7 @@
   },
   {
     "codigo": "3656709",
-    "descripcion": "MUÑEQUERA INM. DERECHA PED 8-10 AÑOS (VARIEDAD COLORES) REF BK10D-2",
+    "descripcion": "MUÃEQUERA INM. DERECHA PED 8-10 AÃOS (VARIEDAD COLORES) REF BK10D-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12254,7 +12259,7 @@
   },
   {
     "codigo": "3656707",
-    "descripcion": "MUÑEQUERA INM. IZQUIERDA PED 8-10 AÑOS (VARIEDAD COLORES) REF BK10I-2",
+    "descripcion": "MUÃEQUERA INM. IZQUIERDA PED 8-10 AÃOS (VARIEDAD COLORES) REF BK10I-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12264,7 +12269,7 @@
   },
   {
     "codigo": "3656715",
-    "descripcion": "TOBILLERA ESTABILIZADORA PED 12-14 AÑOS (VARIEDAD COLORES) REF BK15-3",
+    "descripcion": "TOBILLERA ESTABILIZADORA PED 12-14 AÃOS (VARIEDAD COLORES) REF BK15-3",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12274,7 +12279,7 @@
   },
   {
     "codigo": "3656714",
-    "descripcion": "TOBILLERA ESTABILIZADORA PED 4-6 AÑOS (VARIEDAD COLORES) REF BK15-1",
+    "descripcion": "TOBILLERA ESTABILIZADORA PED 4-6 AÃOS (VARIEDAD COLORES) REF BK15-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12284,7 +12289,7 @@
   },
   {
     "codigo": "3800784",
-    "descripcion": "TOBILLERA ESTABILIZADORA PED 8-10 AÑOS (VARIEDAD COLORES) REF BK15-2",
+    "descripcion": "TOBILLERA ESTABILIZADORA PED 8-10 AÃOS (VARIEDAD COLORES) REF BK15-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12444,7 +12449,7 @@
   },
   {
     "codigo": "3656717",
-    "descripcion": "INMOVILIZADOR DE RODILLA PED 12-14 AÑOS (VARIEDAD COLORES) REF BK13-3",
+    "descripcion": "INMOVILIZADOR DE RODILLA PED 12-14 AÃOS (VARIEDAD COLORES) REF BK13-3",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12454,7 +12459,7 @@
   },
   {
     "codigo": "3800814",
-    "descripcion": "INMOVILIZADOR DE RODILLA PED 4-6 AÑOS (VARIEDAD COLORES) REF BK13-1",
+    "descripcion": "INMOVILIZADOR DE RODILLA PED 4-6 AÃOS (VARIEDAD COLORES) REF BK13-1",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12464,7 +12469,7 @@
   },
   {
     "codigo": "3656713",
-    "descripcion": "INMOVILIZADOR DE RODILLA PED 8-10 AÑOS (VARIEDAD COLORES) REF BK13-2",
+    "descripcion": "INMOVILIZADOR DE RODILLA PED 8-10 AÃOS (VARIEDAD COLORES) REF BK13-2",
     "ubicaciones": [
       {
         "pasillo": "11",
@@ -12564,7 +12569,7 @@
   },
   {
     "codigo": "3656517",
-    "descripcion": "BRAZALETE DE PRESION 1 VIA ADULTO PEQUEÑO (20.5-28CM)",
+    "descripcion": "BRAZALETE DE PRESION 1 VIA ADULTO PEQUEÃO (20.5-28CM)",
     "ubicaciones": [
       {
         "pasillo": "12",
@@ -12614,7 +12619,7 @@
   },
   {
     "codigo": "3656684",
-    "descripcion": "BRAZALETE DE PRESION 2 VIAS ADULTO PEQUEÑO (20.5-28CM)",
+    "descripcion": "BRAZALETE DE PRESION 2 VIAS ADULTO PEQUEÃO (20.5-28CM)",
     "ubicaciones": [
       {
         "pasillo": "12",
@@ -12762,7 +12767,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -12982,7 +12987,7 @@
   },
   {
     "codigo": "3656745",
-    "descripcion": "KIT ANESTESIA RIÑON PULPA ESTERIL",
+    "descripcion": "KIT ANESTESIA RIÃON PULPA ESTERIL",
     "ubicaciones": [
       {
         "pasillo": "13",
@@ -13074,7 +13079,7 @@
   },
   {
     "codigo": "3656397",
-    "descripcion": "PAÑO CLINICO 38X66 (PAQUETE 2 UNIDADES)",
+    "descripcion": "PAÃO CLINICO 38X66 (PAQUETE 2 UNIDADES)",
     "ubicaciones": [
       {
         "pasillo": "13",
@@ -13416,7 +13421,7 @@
       },
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -13606,7 +13611,7 @@
   },
   {
     "codigo": "5062484",
-    "descripcion": "EVERPRESSIN SOLUCIÓN INYECTABLE (TERLIPRESINA 1 MG/5 ML)",
+    "descripcion": "EVERPRESSIN SOLUCIÃN INYECTABLE (TERLIPRESINA 1 MG/5 ML)",
     "ubicaciones": [
       {
         "pasillo": "15",
@@ -14320,7 +14325,7 @@
   },
   {
     "codigo": "3654530",
-    "descripcion": "BANDA DE SILICONA N°41 CON MANGUITO N°70",
+    "descripcion": "BANDA DE SILICONA NÂ°41 CON MANGUITO NÂ°70",
     "ubicaciones": [
       {
         "pasillo": "19",
@@ -14874,7 +14879,7 @@
   },
   {
     "codigo": "3250571",
-    "descripcion": "GUANTES QUIR. ESTERIL LIBRE DE LATEX S/POLVO Nº 8.0",
+    "descripcion": "GUANTES QUIR. ESTERIL LIBRE DE LATEX S/POLVO NÂº 8.0",
     "ubicaciones": [
       {
         "pasillo": "22",
@@ -14884,7 +14889,7 @@
   },
   {
     "codigo": "3250611",
-    "descripcion": "GUANTES QUIR.ESTERIL LIBRE DE LATEX S/POLVO N°6 1/2",
+    "descripcion": "GUANTES QUIR.ESTERIL LIBRE DE LATEX S/POLVO NÂ°6 1/2",
     "ubicaciones": [
       {
         "pasillo": "22",
@@ -14894,7 +14899,7 @@
   },
   {
     "codigo": "3250601",
-    "descripcion": "GUANTES QUIR.ESTERIL LIBRE DE LATEX S/POLVO Nº 8 1/2",
+    "descripcion": "GUANTES QUIR.ESTERIL LIBRE DE LATEX S/POLVO NÂº 8 1/2",
     "ubicaciones": [
       {
         "pasillo": "22",
@@ -14918,7 +14923,7 @@
     "ubicaciones": [
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -14928,7 +14933,7 @@
     "ubicaciones": [
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -14938,7 +14943,7 @@
     "ubicaciones": [
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -14948,7 +14953,7 @@
     "ubicaciones": [
       {
         "pasillo": "23",
-        "ubicacion": "MESÓN"
+        "ubicacion": "MESÃN"
       }
     ]
   },
@@ -15034,7 +15039,7 @@
   },
   {
     "codigo": "3800441",
-    "descripcion": "SET DE BAÑO",
+    "descripcion": "SET DE BAÃO",
     "ubicaciones": [
       {
         "pasillo": "25",
