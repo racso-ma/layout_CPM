@@ -237,7 +237,10 @@ mark{background:#fff3b0;color:#7a5c00;border-radius:2px;padding:0 1px}
 <div class="page active" id="page-farmacia">
   <div class="page-header">
     <div><h1>Búsqueda — Farmacia</h1><div class="sub">Clínica Puerto Montt · ACHS Salud</div></div>
-    <div class="ph-badge" id="badge-f">💊 — productos</div>
+    <div style="display:flex;align-items:center;gap:10px">
+  <div class="ph-badge" id="badge-f">💊 — productos</div>
+  <button class="btn-export" onclick="exportarExcel('farmacia')">⬇️ Exportar Excel</button>
+</div>
   </div>
   <div class="search-wrap"><span class="s-icon">🔍</span>
     <input type="text" id="input-f" placeholder="Código exacto o palabras de la descripción…" autocomplete="off" spellcheck="false">
@@ -250,7 +253,10 @@ mark{background:#fff3b0;color:#7a5c00;border-radius:2px;padding:0 1px}
 <div class="page" id="page-bodega">
   <div class="page-header">
     <div><h1>Búsqueda — Bodega Central</h1><div class="sub">Incluye Bodega Central y Bodega Estacionamiento</div></div>
-    <div class="ph-badge" id="badge-b">📦 — productos</div>
+    <div style="display:flex;align-items:center;gap:10px">
+  <div class="ph-badge" id="badge-b">📦 — productos</div>
+  <button class="btn-export" onclick="exportarExcel('bodega')">⬇️ Exportar Excel</button>
+</div>
   </div>
   <div class="search-wrap"><span class="s-icon">🔍</span>
     <input type="text" id="input-b" placeholder="Código exacto o palabras de la descripción…" autocomplete="off" spellcheck="false">
@@ -884,6 +890,36 @@ function showToast(msg, type) {
 // Initialize editor action display
 setAction('add');
 setTimeout(updateTokenStatus, 100);
+</script>
+  <!-- SheetJS para exportar Excel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+function exportarExcel(tipo) {
+  const esFarmacia = tipo === 'farmacia';
+  const datos = esFarmacia ? workF : workB;
+  const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+
+  const filas = [];
+  datos.forEach(item => {
+    const ubs = Array.isArray(item.ubicaciones) ? item.ubicaciones : [];
+    if (ubs.length === 0) {
+      filas.push({ 'Código': item.codigo || '', 'Descripción': item.descripcion || '', 'Pasillo/Sección': '', 'Ubicación': '' });
+    } else {
+      ubs.forEach(u => {
+        filas.push({ 'Código': item.codigo || '', 'Descripción': item.descripcion || '', 'Pasillo/Sección': u.pasillo || '', 'Ubicación': u.ubicacion || '' });
+      });
+    }
+  });
+
+  const ws = XLSX.utils.json_to_sheet(filas);
+  ws['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 20 }, { wch: 20 }];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, esFarmacia ? 'Farmacia' : 'Bodega');
+
+  const fecha = new Date().toISOString().slice(0, 10);
+  XLSX.writeFile(wb, nombre + '_' + fecha + '.xlsx');
+}
 </script>
 </body>
 </html>
