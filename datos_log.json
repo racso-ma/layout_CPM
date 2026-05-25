@@ -1,12 +1,22 @@
 [
   {
+    "ts": "25-05-2026, 3:38:32 p. m.",
+    "user": "Francesco",
+    "code": "5061071",
+    "desc": "ACIDO ACETILSALICILICO 100 MG CM",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/3B → P.20/1A",
+    "motivo": ""
+  },
+  {
     "ts": "25-05-2026, 3:36:20 p. m.",
     "user": "Francesco",
     "code": "6991457",
     "desc": "ESPIRONOLACTONA 25 MG COMP VO",
     "mod": "farmacia",
     "action": "edit",
-    "detail": "P.4/4C → P.20/2C",
+    "detail": "P.4/4C â P.20/2C",
     "motivo": ""
   },
   {
@@ -107,6 +117,6 @@
     "mod": "bodega",
     "action": "del",
     "detail": "Eliminado S.Estacionamiento / B. Estadionamiento",
-    "motivo": "ya no se guarda ahÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­"
+    "motivo": "ya no se guarda ahÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­"
   }
 ]
