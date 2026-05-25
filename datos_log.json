@@ -1,5 +1,15 @@
 [
   {
+    "ts": "24-05-2026, 9:13:05 p. m.",
+    "user": "oscar",
+    "code": "3250650",
+    "desc": "GUANTE NITRILO ALTO RIESGO T/L",
+    "mod": "bodega",
+    "action": "del",
+    "detail": "Eliminado S.2 / 2E",
+    "motivo": ""
+  },
+  {
     "ts": "24-05-2026, 8:55:50 p. m.",
     "user": "oscar",
     "code": "41306064",
@@ -67,6 +77,6 @@
     "mod": "bodega",
     "action": "del",
     "detail": "Eliminado S.Estacionamiento / B. Estadionamiento",
-    "motivo": "ya no se guarda ahÃÂÃÂ­"
+    "motivo": "ya no se guarda ahÃÂÃÂÃÂÃÂ­"
   }
 ]
