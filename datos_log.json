@@ -1,5 +1,15 @@
 [
   {
+    "ts": "25-05-2026, 3:09:40 p. m.",
+    "user": "Angellus",
+    "code": "3656671",
+    "desc": "PERLAS DE NITRATO DE PLATA TUBO 200 UNIDADES",
+    "mod": "farmacia",
+    "action": "del",
+    "detail": "Eliminado P.5 / 2B",
+    "motivo": "descontinuado"
+  },
+  {
     "ts": "24-05-2026, 9:13:05 p. m.",
     "user": "oscar",
     "code": "3250650",
@@ -77,6 +87,6 @@
     "mod": "bodega",
     "action": "del",
     "detail": "Eliminado S.Estacionamiento / B. Estadionamiento",
-    "motivo": "ya no se guarda ahÃÂÃÂÃÂÃÂ­"
+    "motivo": "ya no se guarda ahÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­"
   }
 ]
