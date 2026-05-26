@@ -450,21 +450,27 @@ async function ghPut(filename, content, sha) {
 
 let shaF = null, shaB = null, shaLog = null;
 
-async function loadFromGitHub() {
-  if (!getToken()) { showSyncStatus(''); return; }
+if (!getToken()) { showSyncStatus(''); return; }
   showSyncStatus('⏳ Cargando datos desde la nube…');
-  const [rf, rb, rl] = await Promise.all([ghGet(GH.fileF), ghGet(GH.fileB), ghGet(GH.fileLog)]);
-  if (rf.content) { workF = rf.content; shaF = rf.sha; }
-  else { workF = DATA_F; }
-  if (rb.content) { workB = rb.content; shaB = rb.sha; }
-  else { workB = DATA_B; }
-  if (rl.content) { changelog = rl.content; shaLog = rl.sha; }
-  document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
-  document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
-  buildMapF(); buildMapB(); renderLog();
-  showSyncStatus('✅ Datos sincronizados', 3000); setTimeout(updateTokenStatus, 200);
+  document.querySelectorAll('.tab').forEach(t => t.style.pointerEvents='none');
+  try {
+    const [rf, rb, rl] = await Promise.all([ghGet(GH.fileF), ghGet(GH.fileB), ghGet(GH.fileLog)]);
+    if (rf.content) { workF = rf.content; shaF = rf.sha; }
+    else { workF = DATA_F; }
+    if (rb.content) { workB = rb.content; shaB = rb.sha; }
+    else { workB = DATA_B; }
+    if (rl.content) { changelog = rl.content; shaLog = rl.sha; }
+    document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
+    document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
+    buildMapF(); buildMapB(); renderLog();
+    showSyncStatus('✅ Datos sincronizados', 3000);
+    setTimeout(updateTokenStatus, 200);
+  } catch(e) {
+    showSyncStatus('⚠️ Error al cargar datos', 4000);
+  } finally {
+    document.querySelectorAll('.tab').forEach(t => t.style.pointerEvents='');
+  }
 }
-
 async function saveToGitHub() {
   if (!getToken()) {
     if (!promptToken()) { showToast('⚠️ Sin token — cambio guardado solo localmente', 'warn'); return; }
