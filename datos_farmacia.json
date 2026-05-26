@@ -4978,6 +4978,10 @@
       {
         "pasillo": "2",
         "ubicacion": "2B"
+      },
+      {
+        "pasillo": "20",
+        "ubicacion": "3A"
       }
     ]
   },
