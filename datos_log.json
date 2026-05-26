@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:43:20 a. m.",
+    "user": "Francesco",
+    "code": "6250092",
+    "desc": "PREGABALINA 150 MG CM",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4A → P.20/3B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:43:01 a. m.",
     "user": "Francesco",
     "code": "6250084",
