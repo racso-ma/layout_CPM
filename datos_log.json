@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:36:05 a. m.",
+    "user": "Francesco",
+    "code": "6994067",
+    "desc": "LEVOTIROXINA 75 MG CM",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4B → P.20/3A",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:35:47 a. m.",
     "user": "Francesco",
     "code": "5950058",
