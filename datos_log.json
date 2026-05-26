@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:25:20 a. m.",
+    "user": "Francesco",
+    "code": "6994271",
+    "desc": "CARVEDILOL 12.5 MG CM",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/3A → P.20/1B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:24:17 a. m.",
     "user": "Francesco",
     "code": "5062469",
