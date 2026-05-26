@@ -427,14 +427,35 @@ function promptToken() {
 
 async function ghGet(filename) {
   try {
-    const r = await fetch('https://api.github.com/repos/'+GH.owner+'/'+GH.repo+'/contents/'+filename+'?ref='+GH.branch, {
-      headers: { 'Authorization': 'token '+getToken(), 'Accept': 'application/vnd.github.v3+json' }
-    });
+    const headers = {
+      'Accept': 'application/vnd.github.v3+json'
+    };
+
+    const token = getToken();
+    if (token) {
+      headers['Authorization'] = 'token ' + token;
+    }
+
+    const r = await fetch(
+      'https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename + '?ref=' + GH.branch,
+      { headers }
+    );
+
     if (r.status === 404) return { content: null, sha: null };
+
+    if (!r.ok) {
+      console.error('Error leyendo GitHub:', filename, r.status);
+      return { content: null, sha: null };
+    }
+
     const d = await r.json();
-    const content = JSON.parse(atob(d.content.replace(/\n/g,'')));
+    const content = JSON.parse(atob(d.content.replace(/\n/g, '')));
     return { content, sha: d.sha };
-  } catch(e) { return { content: null, sha: null }; }
+
+  } catch (e) {
+    console.error('Error ghGet:', filename, e);
+    return { content: null, sha: null };
+  }
 }
 
 async function ghPut(filename, content, sha) {
