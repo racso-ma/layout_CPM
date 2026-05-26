@@ -412,66 +412,154 @@ function getToken() {
   return GH.token || localStorage.getItem('laymap_gh_token') || null;
 }
 
+function isValidToken(t) {
+  // GitHub usa varios formatos: ghp_, github_pat_, gho_, ghs_, etc.
+  // Para no bloquear tokens nuevos, se acepta cualquier token no vacío de largo razonable.
+  return !!(t && t.trim().length >= 20);
+}
+
 function promptToken() {
   const t = prompt('Ingresa tu GitHub Personal Access Token para sincronizar cambios:');
-  if (t && t.trim().startsWith('ghp_')) {
+  if (isValidToken(t)) {
     GH.token = t.trim();
     localStorage.setItem('laymap_gh_token', GH.token);
+    updateTokenStatus();
     return true;
   } else if (t) {
-    alert('Token inválido. Debe comenzar con ghp_');
+    alert('Token inválido o demasiado corto.');
     return false;
   }
   return false;
 }
 
-async function ghGet(filename) {
-  try {
-    const headers = {
-      'Accept': 'application/vnd.github.v3+json'
-    };
+function ghHeaders(withAuth) {
+  const headers = { 'Accept': 'application/vnd.github.v3+json' };
+  const token = getToken();
+  if (withAuth && token) headers['Authorization'] = 'Bearer ' + token;
+  return headers;
+}
 
-    const token = getToken();
-    if (token) {
-      headers['Authorization'] = 'token ' + token;
+function decodeBase64Unicode(base64Text) {
+  const binary = atob(String(base64Text || '').replace(/\n/g, ''));
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder('utf-8').decode(bytes);
+}
+
+function encodeBase64Unicode(text) {
+  const bytes = new TextEncoder().encode(text);
+  let binary = '';
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary);
+}
+
+function normalizeDataset(data) {
+  if (!Array.isArray(data)) return [];
+  return data.map(r => ({
+    codigo: String(r.codigo || '').trim(),
+    descripcion: String(r.descripcion || '').trim(),
+    ubicaciones: Array.isArray(r.ubicaciones)
+      ? r.ubicaciones.map(u => ({
+          pasillo: String(u.pasillo || '').trim(),
+          ubicacion: String(u.ubicacion || '').trim()
+        })).filter(u => u.pasillo || u.ubicacion)
+      : []
+  })).filter(r => r.codigo);
+}
+
+async function ghGetRaw(filename) {
+  try {
+    const url = 'https://raw.githubusercontent.com/' + GH.owner + '/' + GH.repo + '/' + GH.branch + '/' + filename + '?v=' + Date.now();
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) return { content: null, sha: null, error: 'RAW ' + r.status };
+    const text = await r.text();
+    return { content: JSON.parse(text), sha: null, error: null };
+  } catch(e) {
+    console.error('Error ghGetRaw:', filename, e);
+    return { content: null, sha: null, error: String(e) };
+  }
+}
+
+async function ghGet(filename) {
+  // Primero intenta GitHub API. Si falla por token/rate/cualquier motivo,
+  // intenta raw.githubusercontent.com para repositorios públicos.
+  try {
+    const url = 'https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename + '?ref=' + GH.branch + '&v=' + Date.now();
+
+    let r = await fetch(url, { headers: ghHeaders(true), cache: 'no-store' });
+
+    // Si el token está malo, intenta leer sin autorización.
+    if (r.status === 401 || r.status === 403) {
+      console.warn('GitHub API respondió', r.status, 'en', filename, '— intentando lectura pública.');
+      r = await fetch(url, { headers: ghHeaders(false), cache: 'no-store' });
     }
 
-    const r = await fetch(
-      'https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename + '?ref=' + GH.branch,
-      { headers }
-    );
-
-    if (r.status === 404) return { content: null, sha: null };
+    if (r.status === 404) return { content: null, sha: null, error: '404 no encontrado' };
 
     if (!r.ok) {
-      console.error('Error leyendo GitHub:', filename, r.status);
-      return { content: null, sha: null };
+      console.error('Error leyendo GitHub API:', filename, r.status);
+      return await ghGetRaw(filename);
     }
 
     const d = await r.json();
-    const content = JSON.parse(atob(d.content.replace(/\n/g, '')));
-    return { content, sha: d.sha };
+    const jsonText = decodeBase64Unicode(d.content);
+    return { content: JSON.parse(jsonText), sha: d.sha, error: null };
 
   } catch (e) {
     console.error('Error ghGet:', filename, e);
-    return { content: null, sha: null };
+    return await ghGetRaw(filename);
   }
 }
 
 async function ghPut(filename, content, sha) {
-  const body = { message: 'LayMap update: '+filename, content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))), branch: GH.branch };
-  if (sha) body.sha = sha;
-  const r = await fetch('https://api.github.com/repos/'+GH.owner+'/'+GH.repo+'/contents/'+filename, {
-    method: 'PUT',
-    headers: { 'Authorization': 'token '+getToken(), 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
-  });
-  return r.ok;
+  const token = getToken();
+  if (!token) return { ok: false, status: 'sin-token' };
+
+  async function putOnce(currentSha) {
+    const body = {
+      message: 'LayMap update: ' + filename,
+      content: encodeBase64Unicode(JSON.stringify(content, null, 2)),
+      branch: GH.branch
+    };
+    if (currentSha) body.sha = currentSha;
+
+    const r = await fetch('https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    return r;
+  }
+
+  let r = await putOnce(sha);
+
+  // Si hay conflicto de SHA, lee SHA nuevo y reintenta una vez.
+  if (r.status === 409 || r.status === 422) {
+    const latest = await ghGet(filename);
+    if (latest.sha) r = await putOnce(latest.sha);
+  }
+
+  if (!r.ok) {
+    console.error('Error guardando GitHub:', filename, r.status, await r.text().catch(()=>''));
+    return { ok: false, status: r.status };
+  }
+
+  const d = await r.json().catch(() => null);
+  return { ok: true, sha: d && d.content ? d.content.sha : null };
 }
 
 let shaF = null, shaB = null, shaLog = null;
+let isLoadingFromGitHub = false;
+let saveTimer = null;
+let isSavingGitHub = false;
 
 async function loadFromGitHub() {
+  if (isLoadingFromGitHub) return;
+  isLoadingFromGitHub = true;
   showSyncStatus('⏳ Cargando datos desde la nube…');
 
   try {
@@ -481,13 +569,16 @@ async function loadFromGitHub() {
       ghGet(GH.fileLog)
     ]);
 
-    if (rf.content) { workF = rf.content; shaF = rf.sha; }
-    else { workF = DATA_F; }
+    workF = normalizeDataset(rf.content || DATA_F);
+    workB = normalizeDataset(rb.content || DATA_B);
+    shaF = rf.sha || shaF;
+    shaB = rb.sha || shaB;
 
-    if (rb.content) { workB = rb.content; shaB = rb.sha; }
-    else { workB = DATA_B; }
-
-    if (rl.content) { changelog = rl.content; shaLog = rl.sha; }
+    if (Array.isArray(rl.content)) {
+      changelog = rl.content;
+      shaLog = rl.sha || shaLog;
+      try { localStorage.setItem('laymap_log', JSON.stringify(changelog)); } catch(e){}
+    }
 
     document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
     document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
@@ -496,16 +587,29 @@ async function loadFromGitHub() {
     buildMapB();
     renderLog();
 
-    showSyncStatus('✅ Datos sincronizados', 3000);
+    const msg = '✅ Datos sincronizados · Farmacia: ' + workF.length + ' · Bodega: ' + workB.length;
+    showSyncStatus(msg, 5000);
+
+    if (workF.length === 0 && workB.length === 0) {
+      showToast('⚠️ No se cargaron productos. Revisa que los JSON existan y que el repositorio sea público o tengas token.', 'warn');
+    }
+
     setTimeout(updateTokenStatus, 200);
 
   } catch (e) {
     console.error('Error loadFromGitHub:', e);
-    showSyncStatus('⚠️ Error al cargar datos', 4000);
+    showSyncStatus('⚠️ Error al cargar datos', 5000);
+    showToast('⚠️ Error al cargar datos desde GitHub', 'warn');
+  } finally {
+    isLoadingFromGitHub = false;
   }
 }
 
-let saveTimer = null;
+function getSaveButtonText() {
+  if (currentAction === 'add') return 'AGREGAR UBICACIÓN';
+  if (currentAction === 'edit') return 'GUARDAR MODIFICACIÓN';
+  return 'ELIMINAR UBICACIÓN SELECCIONADA';
+}
 
 function programarGuardadoGitHub() {
   showSyncStatus('Cambios pendientes...');
@@ -516,8 +620,10 @@ function programarGuardadoGitHub() {
 }
 
 async function saveToGitHub() {
-  const btn = document.getElementById('btn-save');
+  if (isSavingGitHub) return;
+  isSavingGitHub = true;
 
+  const btn = document.getElementById('btn-save');
   if (btn) {
     btn.disabled = true;
     btn.textContent = 'GUARDANDO...';
@@ -526,44 +632,48 @@ async function saveToGitHub() {
   try {
     if (!getToken()) {
       if (!promptToken()) {
-        showToast('⚠️ Sin token — cambio guardado solo localmente', 'warn');
-        showSyncStatus('⚠️ Cambio guardado solo localmente', 4000);
+        showToast('⚠️ Sin token — cambio guardado solo en esta sesión', 'warn');
+        showSyncStatus('⚠️ Cambio no sincronizado con GitHub', 5000);
         return;
       }
     }
 
     showSyncStatus('⏳ Guardando en la nube…');
 
-    // Sequential writes to avoid 409 conflicts
-    const okF = await ghPut(GH.fileF, workF, shaF);
-    if (okF) { const rf = await ghGet(GH.fileF); if (rf.sha) shaF = rf.sha; }
+    const rf = await ghPut(GH.fileF, workF, shaF);
+    if (rf.ok && rf.sha) shaF = rf.sha;
 
-    const okB = await ghPut(GH.fileB, workB, shaB);
-    if (okB) { const rb = await ghGet(GH.fileB); if (rb.sha) shaB = rb.sha; }
+    const rb = await ghPut(GH.fileB, workB, shaB);
+    if (rb.ok && rb.sha) shaB = rb.sha;
 
-    const okL = await ghPut(GH.fileLog, changelog, shaLog);
-    if (okL) { const rl = await ghGet(GH.fileLog); if (rl.sha) shaLog = rl.sha; }
+    const rl = await ghPut(GH.fileLog, changelog, shaLog);
+    if (rl.ok && rl.sha) shaLog = rl.sha;
 
-    if (okF && okB && okL) {
-      showSyncStatus('✅ Guardado en la nube', 3000);
+    if (rf.ok && rb.ok && rl.ok) {
+      showSyncStatus('✅ Guardado en la nube', 4000);
     } else {
-      showSyncStatus('⚠️ Guardado parcial — reintenta', 4000);
-      showToast('⚠️ Guardado parcial — intenta de nuevo', 'warn');
+      showSyncStatus('⚠️ Guardado parcial — revisa token/permisos', 6000);
+      showToast('⚠️ Guardado parcial — revisa token/permisos', 'warn');
     }
   } catch(e) {
-    showSyncStatus('⚠️ Error de red', 4000);
+    console.error('Error saveToGitHub:', e);
+    showSyncStatus('⚠️ Error de red al guardar', 6000);
     showToast('⚠️ Error de sincronización', 'warn');
   } finally {
+    isSavingGitHub = false;
     if (btn) {
       btn.disabled = false;
-      btn.textContent = 'GUARDAR CAMBIO';
+      btn.textContent = getSaveButtonText();
     }
   }
 }
 
 function showSyncStatus(msg, hideAfter) {
   const el = document.getElementById('sync-status');
-  if (el) { el.textContent = msg; if (hideAfter) setTimeout(() => el.textContent = '', hideAfter); }
+  if (el) {
+    el.textContent = msg;
+    if (hideAfter) setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, hideAfter);
+  }
 }
 
 // Load from GitHub on start
@@ -943,16 +1053,17 @@ function configToken() {
   const current = localStorage.getItem('laymap_gh_token');
   const msg = current ? 'Token actual: ...'+current.slice(-6)+'\n\nIngresa uno nuevo (o cancela para mantener el actual):' : 'Ingresa tu GitHub Personal Access Token:';
   const t = prompt(msg);
-  if (t && t.trim().startsWith('ghp_')) {
+  if (isValidToken(t)) {
     GH.token = t.trim();
     localStorage.setItem('laymap_gh_token', GH.token);
     updateTokenStatus();
     showToast('✅ Token guardado correctamente');
     loadFromGitHub();
   } else if (t) {
-    alert('Token inválido. Debe comenzar con ghp_');
+    alert('Token inválido o demasiado corto.');
   }
 }
+
 
 function updateTokenStatus() {
   const el = document.getElementById('token-status');
