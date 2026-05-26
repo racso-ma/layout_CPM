@@ -515,6 +515,42 @@ async function ghPut(filename, content, sha) {
   const token = getToken();
   if (!token) return { ok: false, status: 'sin-token' };
 
+  try {
+    const body = {
+      message: 'LayMap update: ' + filename,
+      content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
+      branch: GH.branch
+    };
+
+    if (sha) body.sha = sha;
+
+    const r = await fetch(
+      'https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      }
+    );
+
+    const txt = await r.text();
+    console.log('PUT', filename, r.status, txt);
+
+    if (!r.ok) return { ok: false, status: r.status, error: txt };
+
+    const data = JSON.parse(txt);
+    return { ok: true, status: r.status, sha: data.content.sha };
+
+  } catch (e) {
+    console.error('ERROR ghPut', filename, e);
+    return { ok: false, status: 'error', error: e.message };
+  }
+}
+
   async function putOnce(currentSha) {
     const body = {
       message: 'LayMap update: ' + filename,
