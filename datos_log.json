@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:42:19 a. m.",
+    "user": "Francesco",
+    "code": "5061413",
+    "desc": "PARACETAMOL 125 MG SUPOSIT.",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4A → P.20/3B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:41:53 a. m.",
     "user": "Francesco",
     "code": "5062179",
