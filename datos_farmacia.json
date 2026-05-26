@@ -15091,15 +15091,5 @@
         "ubicacion": "MUEBLE"
       }
     ]
-  },
-  {
-    "codigo": "3050820",
-    "descripcion": "3050820",
-    "ubicaciones": [
-      {
-        "pasillo": "5",
-        "ubicacion": "5C"
-      }
-    ]
   }
 ]
