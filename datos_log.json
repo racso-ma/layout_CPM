@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:22:51 a. m.",
+    "user": "Francesco",
+    "code": "6450131",
+    "desc": "ATORVASTATINA 10 MG CM V.O",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/3B → P.20/1B",
+    "motivo": ""
+  },
+  {
     "ts": "25-05-2026, 11:22:30 p. m.",
     "user": "oscar",
     "code": "3050820",
