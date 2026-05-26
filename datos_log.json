@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:30:38 a. m.",
+    "user": "Francesco",
+    "code": "6992281",
+    "desc": "HIDRALAZINA 50 MG CM V.O",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4B → P.20/2B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:30:05 a. m.",
     "user": "Francesco",
     "code": "5060331",
