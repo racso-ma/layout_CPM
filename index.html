@@ -450,40 +450,60 @@ async function ghPut(filename, content, sha) {
 
 let shaF = null, shaB = null, shaLog = null;
 
-if (!getToken()) { showSyncStatus(''); return; }
+async function loadFromGitHub() {
+  if (!getToken()) { showSyncStatus(''); return; }
   showSyncStatus('⏳ Cargando datos desde la nube…');
-  document.querySelectorAll('.tab').forEach(t => t.style.pointerEvents='none');
-  try {
-    const [rf, rb, rl] = await Promise.all([ghGet(GH.fileF), ghGet(GH.fileB), ghGet(GH.fileLog)]);
-    if (rf.content) { workF = rf.content; shaF = rf.sha; }
-    else { workF = DATA_F; }
-    if (rb.content) { workB = rb.content; shaB = rb.sha; }
-    else { workB = DATA_B; }
-    if (rl.content) { changelog = rl.content; shaLog = rl.sha; }
-    document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
-    document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
-    buildMapF(); buildMapB(); renderLog();
-    showSyncStatus('✅ Datos sincronizados', 3000);
-    setTimeout(updateTokenStatus, 200);
-  } catch(e) {
-    showSyncStatus('⚠️ Error al cargar datos', 4000);
-  } finally {
-    document.querySelectorAll('.tab').forEach(t => t.style.pointerEvents='');
-  }
+  const [rf, rb, rl] = await Promise.all([ghGet(GH.fileF), ghGet(GH.fileB), ghGet(GH.fileLog)]);
+  if (rf.content) { workF = rf.content; shaF = rf.sha; }
+  else { workF = DATA_F; }
+  if (rb.content) { workB = rb.content; shaB = rb.sha; }
+  else { workB = DATA_B; }
+  if (rl.content) { changelog = rl.content; shaLog = rl.sha; }
+  document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
+  document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
+  buildMapF(); buildMapB(); renderLog();
+  showSyncStatus('✅ Datos sincronizados', 3000); setTimeout(updateTokenStatus, 200);
 }
+
+let saveTimer = null;
+
+function programarGuardadoGitHub() {
+  showSyncStatus('Cambios pendientes...');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    saveToGitHub();
+  }, 1500);
+}
+
 async function saveToGitHub() {
-  if (!getToken()) {
-    if (!promptToken()) { showToast('⚠️ Sin token — cambio guardado solo localmente', 'warn'); return; }
+  const btn = document.getElementById('btn-save');
+
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'GUARDANDO...';
   }
-  showSyncStatus('⏳ Guardando en la nube…');
+
   try {
+    if (!getToken()) {
+      if (!promptToken()) {
+        showToast('⚠️ Sin token — cambio guardado solo localmente', 'warn');
+        showSyncStatus('⚠️ Cambio guardado solo localmente', 4000);
+        return;
+      }
+    }
+
+    showSyncStatus('⏳ Guardando en la nube…');
+
     // Sequential writes to avoid 409 conflicts
     const okF = await ghPut(GH.fileF, workF, shaF);
     if (okF) { const rf = await ghGet(GH.fileF); if (rf.sha) shaF = rf.sha; }
+
     const okB = await ghPut(GH.fileB, workB, shaB);
     if (okB) { const rb = await ghGet(GH.fileB); if (rb.sha) shaB = rb.sha; }
+
     const okL = await ghPut(GH.fileLog, changelog, shaLog);
     if (okL) { const rl = await ghGet(GH.fileLog); if (rl.sha) shaLog = rl.sha; }
+
     if (okF && okB && okL) {
       showSyncStatus('✅ Guardado en la nube', 3000);
     } else {
@@ -493,6 +513,11 @@ async function saveToGitHub() {
   } catch(e) {
     showSyncStatus('⚠️ Error de red', 4000);
     showToast('⚠️ Error de sincronización', 'warn');
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = 'GUARDAR CAMBIO';
+    }
   }
 }
 
@@ -754,7 +779,7 @@ function saveEdit() {
     let desc = code;
     if (idx>=0) { dataset[idx].ubicaciones.push({pasillo:pas, ubicacion:ubi}); desc=dataset[idx].descripcion; }
     else {
-      const desc = document.getElementById('ed-desc-add').value.trim() || code;
+      desc = document.getElementById('ed-desc-add').value.trim() || code;
       dataset.push({codigo:code, descripcion:desc, ubicaciones:[{pasillo:pas, ubicacion:ubi}]}); }
     logChange({ts:now(),user,code,desc,mod,action:'add',detail:'Agregado '+prefix+pas+' / '+ubi,motivo:mot});
     showToast('✅ Ubicación agregada');
@@ -787,9 +812,10 @@ function saveEdit() {
   }
 
   resetForm();
-  buildMapF(); buildMapB();
+  buildMapF();
+  buildMapB();
   if (currentAction!=='del') { document.getElementById('input-f').dispatchEvent(new Event('input')); document.getElementById('input-b').dispatchEvent(new Event('input')); }
-  saveToGitHub();
+  programarGuardadoGitHub();
 }
 
 function confirmDelete() {
@@ -803,8 +829,9 @@ function confirmDelete() {
   showSummary(user,desc,'del',code,pasillo,ubicacion,'—','—',mod);
   closeModal();
   resetForm();
-  buildMapF(); buildMapB();
-  saveToGitHub();
+  buildMapF();
+  buildMapB();
+  programarGuardadoGitHub();
   pendingDelete=null;
 }
 
