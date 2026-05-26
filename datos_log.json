@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:37:25 a. m.",
+    "user": "Francesco",
+    "code": "5650860",
+    "desc": "LOSARTAN 50 MG COMP VO",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4B → P.20/3A",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:37:00 a. m.",
     "user": "Francesco",
     "code": "5800137",
