@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:32:26 a. m.",
+    "user": "Francesco",
+    "code": "5450243",
+    "desc": "KETOPROFENO 50MG COMP V.O",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4B → P.20/2B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:31:50 a. m.",
     "user": "Francesco",
     "code": "5650501",
