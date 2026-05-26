@@ -15091,5 +15091,15 @@
         "ubicacion": "MUEBLE"
       }
     ]
+  },
+  {
+    "codigo": "3050820",
+    "descripcion": "CONTADOR DE AGUJA SIMPLE",
+    "ubicaciones": [
+      {
+        "pasillo": "5",
+        "ubicacion": "5C"
+      }
+    ]
   }
 ]
