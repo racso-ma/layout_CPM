@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:31:50 a. m.",
+    "user": "Francesco",
+    "code": "5650501",
+    "desc": "IBUPROFENO 400 MG",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/4B → P.20/2B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:31:02 a. m.",
     "user": "Francesco",
     "code": "5060341",
