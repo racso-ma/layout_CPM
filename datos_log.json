@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:23:53 a. m.",
+    "user": "Francesco",
+    "code": "5060761",
+    "desc": "ATORVASTATINA 40 MG CM",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/3B → P.20/1B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:23:23 a. m.",
     "user": "Francesco",
     "code": "5062160",
