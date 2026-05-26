@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:53:13 a. m.",
+    "user": "Francesco",
+    "code": "5062098",
+    "desc": "MOXIFLOXACINO 400 MG CM VO",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.3/4C → P.20/4B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:52:37 a. m.",
     "user": "Francesco",
     "code": "5061190",
