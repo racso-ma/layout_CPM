@@ -994,12 +994,35 @@ function saveEdit() {
 
   } else if (currentAction==='del') {
     if (idx<0) { showToast('⚠️ Código no encontrado', 'warn'); return; }
-    if (selectedLocIdx<0) { showToast('⚠️ Selecciona una ubicación para eliminar', 'warn'); return; }
-    const u = dataset[idx].ubicaciones[selectedLocIdx];
-    pendingDelete = {idx, locIdx:selectedLocIdx, dataset, code, desc:dataset[idx].descripcion, user, mod, mot, pasillo:u.pasillo, ubicacion:u.ubicacion};
-    const remaining = dataset[idx].ubicaciones.length;
-    let msg = '¿Eliminar la ubicación <b>' + (isBodega?'S.':'P.') + u.pasillo + ' / ' + u.ubicacion + '</b> del producto <b>' + dataset[idx].descripcion.substring(0,40) + '</b>?';
-    if (remaining===1) msg += '<br><br><b style="color:var(--red)">⚠️ Es la única ubicación. Al confirmar, se eliminará el producto completo del JSON.</b>';
+
+    // BORRADO COMPLETO POR CÓDIGO:
+    // Ya no elimina solo una ubicación. Al confirmar, elimina el producto completo
+    // del JSON de Farmacia o Bodega, con todas sus ubicaciones asociadas.
+    const ubicaciones = Array.isArray(dataset[idx].ubicaciones) ? dataset[idx].ubicaciones : [];
+    const u = selectedLocIdx >= 0 && ubicaciones[selectedLocIdx]
+      ? ubicaciones[selectedLocIdx]
+      : (ubicaciones[0] || {pasillo:'—', ubicacion:'—'});
+
+    pendingDelete = {
+      idx,
+      locIdx: selectedLocIdx,
+      dataset,
+      code,
+      desc: dataset[idx].descripcion,
+      user,
+      mod,
+      mot,
+      pasillo: u.pasillo,
+      ubicacion: u.ubicacion,
+      totalUbicaciones: ubicaciones.length
+    };
+
+    const total = ubicaciones.length;
+    let msg = '¿Eliminar COMPLETAMENTE el producto <b>' + dataset[idx].descripcion.substring(0,60) + '</b>?';
+    msg += '<br><br><b>Código:</b> ' + code;
+    msg += '<br><b>Ubicaciones asociadas:</b> ' + total;
+    msg += '<br><br><b style="color:var(--red)">⚠️ Esta acción borrará el producto completo del JSON, no solo una ubicación.</b>';
+
     document.getElementById('modal-msg').innerHTML = msg;
     document.getElementById('modal-del').classList.add('open');
     return;
@@ -1014,45 +1037,44 @@ function saveEdit() {
 
 function confirmDelete() {
   if (!pendingDelete) return;
-  const {idx, locIdx, dataset, code, desc, user, mod, mot, pasillo, ubicacion} = pendingDelete;
+  const {idx, dataset, code, desc, user, mod, mot, pasillo, ubicacion, totalUbicaciones} = pendingDelete;
   const isBodega = mod==='bodega';
-  const prefix = isBodega?'S.':'P.';
-  const totalAntes = dataset[idx] && Array.isArray(dataset[idx].ubicaciones) ? dataset[idx].ubicaciones.length : 0;
+  const prefix = isBodega ? 'S.' : 'P.';
 
-  if (!dataset[idx]) {
+  if (!dataset || !dataset[idx]) {
     closeModal();
     pendingDelete = null;
     showToast('⚠️ No se encontró el producto para eliminar', 'warn');
     return;
   }
 
-  if (totalAntes <= 1) {
-    // Si era la última ubicación, se elimina el producto completo del arreglo.
-    dataset.splice(idx, 1);
-    logChange({
-      ts: now(), user, code, desc, mod, action: 'del',
-      detail: 'Producto eliminado completo. Última ubicación: ' + prefix + pasillo + ' / ' + ubicacion,
-      motivo: mot
-    });
-    showToast('🗑️ Producto eliminado completo');
-  } else {
-    // Si tiene más ubicaciones, solo se elimina la ubicación seleccionada.
-    dataset[idx].ubicaciones.splice(locIdx, 1);
-    logChange({
-      ts: now(), user, code, desc, mod, action: 'del',
-      detail: 'Eliminado ' + prefix + pasillo + ' / ' + ubicacion,
-      motivo: mot
-    });
-    showToast('🗑️ Ubicación eliminada');
-  }
+  // Elimina el producto completo del arreglo, con todas sus ubicaciones.
+  dataset.splice(idx, 1);
 
+  logChange({
+    ts: now(),
+    user,
+    code,
+    desc,
+    mod,
+    action: 'del',
+    detail: 'Producto eliminado completo (' + (totalUbicaciones || 0) + ' ubicaciones). Referencia: ' + prefix + pasillo + ' / ' + ubicacion,
+    motivo: mot
+  });
+
+  showToast('🗑️ Producto eliminado completo');
   showSummary(user, desc, 'del', code, pasillo, ubicacion, '—', '—', mod);
   closeModal();
   resetForm();
   buildMapF();
   buildMapB();
+
   document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
   document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
+
+  document.getElementById('input-f').dispatchEvent(new Event('input'));
+  document.getElementById('input-b').dispatchEvent(new Event('input'));
+
   programarGuardadoGitHub();
   pendingDelete = null;
 }
