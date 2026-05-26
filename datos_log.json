@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:26:28 a. m.",
+    "user": "Francesco",
+    "code": "6990000",
+    "desc": "CELECOXIB 200 MG CM V.O",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.19/ESTANTE → P.20/1B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:26:02 a. m.",
     "user": "Francesco",
     "code": "6500137",
