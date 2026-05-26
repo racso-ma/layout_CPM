@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:51:24 a. m.",
+    "user": "Francesco",
+    "code": "5650061",
+    "desc": "AMOXICILINA 500 MG CP V.O",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.3/4C → P.20/4B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:50:28 a. m.",
     "user": "Francesco",
     "code": "6992651",
