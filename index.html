@@ -513,53 +513,39 @@ async function ghGet(filename) {
 
 async function ghPut(filename, content, sha) {
   const token = getToken();
-  if (!token) return { ok: false, status: 'sin-token' };
+  if (!token) return { ok: false, status: 'sin-token', error: 'No hay token configurado' };
 
-  try {
-    const body = {
-      message: 'LayMap update: ' + filename,
-      content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
-      branch: GH.branch
-    };
+  const apiUrl = 'https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename;
 
-    if (sha) body.sha = sha;
-
-    const r = await fetch(
-      'https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename,
-      {
-        method: 'PUT',
-        headers: {
-          'Authorization': 'Bearer ' + token,
-          'Accept': 'application/vnd.github+json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
+  async function getLatestSha() {
+    try {
+      const r = await fetch(apiUrl + '?ref=' + GH.branch + '&v=' + Date.now(), {
+        headers: ghHeaders(true),
+        cache: 'no-store'
+      });
+      const txt = await r.text();
+      if (!r.ok) {
+        console.error('No se pudo obtener SHA actualizado:', filename, r.status, txt);
+        return null;
       }
-    );
-
-    const txt = await r.text();
-    console.log('PUT', filename, r.status, txt);
-
-    if (!r.ok) return { ok: false, status: r.status, error: txt };
-
-    const data = JSON.parse(txt);
-    return { ok: true, status: r.status, sha: data.content.sha };
-
-  } catch (e) {
-    console.error('ERROR ghPut', filename, e);
-    return { ok: false, status: 'error', error: e.message };
+      const d = JSON.parse(txt);
+      return d.sha || null;
+    } catch (e) {
+      console.error('Error obteniendo SHA actualizado:', filename, e);
+      return null;
+    }
   }
-}
 
-  async function putOnce(currentSha) {
+  async function putWithSha(currentSha) {
     const body = {
       message: 'LayMap update: ' + filename,
       content: encodeBase64Unicode(JSON.stringify(content, null, 2)),
       branch: GH.branch
     };
+
     if (currentSha) body.sha = currentSha;
 
-    const r = await fetch('https://api.github.com/repos/' + GH.owner + '/' + GH.repo + '/contents/' + filename, {
+    const r = await fetch(apiUrl, {
       method: 'PUT',
       headers: {
         'Authorization': 'Bearer ' + token,
@@ -568,24 +554,40 @@ async function ghPut(filename, content, sha) {
       },
       body: JSON.stringify(body)
     });
-    return r;
+
+    const txt = await r.text();
+    console.log('PUT', filename, r.status, txt);
+    return { r, txt };
   }
 
-  let r = await putOnce(sha);
+  try {
+    // Si el SHA viene nulo, se obtiene antes de guardar. Esto evita el error 422
+    // cuando el archivo ya existe pero se intenta crear como nuevo.
+    let currentSha = sha || await getLatestSha();
+    let { r, txt } = await putWithSha(currentSha);
 
-  // Si hay conflicto de SHA, lee SHA nuevo y reintenta una vez.
-  if (r.status === 409 || r.status === 422) {
-    const latest = await ghGet(filename);
-    if (latest.sha) r = await putOnce(latest.sha);
+    // Si otra sesión modificó el JSON, GitHub rechaza por conflicto. Se lee el SHA
+    // nuevo y se reintenta una vez.
+    if (r.status === 409 || r.status === 422) {
+      currentSha = await getLatestSha();
+      if (currentSha) {
+        const retry = await putWithSha(currentSha);
+        r = retry.r;
+        txt = retry.txt;
+      }
+    }
+
+    if (!r.ok) {
+      return { ok: false, status: r.status, error: txt };
+    }
+
+    const data = JSON.parse(txt);
+    return { ok: true, status: r.status, sha: data && data.content ? data.content.sha : currentSha };
+
+  } catch (e) {
+    console.error('ERROR ghPut', filename, e);
+    return { ok: false, status: 'error', error: e.message || String(e) };
   }
-
-  if (!r.ok) {
-    console.error('Error guardando GitHub:', filename, r.status, await r.text().catch(()=>''));
-    return { ok: false, status: r.status };
-  }
-
-  const d = await r.json().catch(() => null);
-  return { ok: true, sha: d && d.content ? d.content.sha : null };
 }
 
 let shaF = null, shaB = null, shaLog = null;
@@ -676,20 +678,26 @@ async function saveToGitHub() {
 
     showSyncStatus('⏳ Guardando en la nube…');
 
-    const rf = await ghPut(GH.fileF, workF, shaF);
+    const rf = await ghPut(GH.fileF, normalizeDataset(workF), shaF);
     if (rf.ok && rf.sha) shaF = rf.sha;
 
-    const rb = await ghPut(GH.fileB, workB, shaB);
+    const rb = await ghPut(GH.fileB, normalizeDataset(workB), shaB);
     if (rb.ok && rb.sha) shaB = rb.sha;
 
-    const rl = await ghPut(GH.fileLog, changelog, shaLog);
+    const rl = await ghPut(GH.fileLog, Array.isArray(changelog) ? changelog : [], shaLog);
     if (rl.ok && rl.sha) shaLog = rl.sha;
 
     if (rf.ok && rb.ok && rl.ok) {
       showSyncStatus('✅ Guardado en la nube', 4000);
+      showToast('✅ Cambios guardados en GitHub');
     } else {
-      showSyncStatus('⚠️ Guardado parcial — revisa token/permisos', 6000);
-      showToast('⚠️ Guardado parcial — revisa token/permisos', 'warn');
+      console.error('Error guardando:', { farmacia: rf, bodega: rb, log: rl });
+      const fallos = [];
+      if (!rf.ok) fallos.push('farmacia ' + rf.status);
+      if (!rb.ok) fallos.push('bodega ' + rb.status);
+      if (!rl.ok) fallos.push('log ' + rl.status);
+      showSyncStatus('⚠️ No guardó: ' + fallos.join(' · '), 9000);
+      showToast('⚠️ No se pudo guardar en GitHub. Revisa consola.', 'warn');
     }
   } catch(e) {
     console.error('Error saveToGitHub:', e);
@@ -911,7 +919,7 @@ function lookupCode() {
       });
     }
     const actionNote = currentAction==='add' ? '<div style="font-size:11px;color:var(--blue-muted);margin-top:8px">Se agregará una ubicación adicional.</div>'
-      : currentAction==='del' && found.ubicaciones.length===1 ? '<div style="font-size:11px;color:var(--red);margin-top:8px">⚠️ Es la única ubicación. Al eliminar, el producto quedará sin ubicación asignada.</div>' : '';
+      : currentAction==='del' && found.ubicaciones.length===1 ? '<div style="font-size:11px;color:var(--red);margin-top:8px">⚠️ Es la única ubicación. Al eliminar, el producto se borrará completo del JSON.</div>' : '';
     box.innerHTML = '<div class="lr-desc">'+found.descripcion+'</div><div class="lr-locs">'+locsHtml+'</div>'+actionNote;
   } else if (code.length > 4) {
     box.style.display='none'; nf.style.display='block';
@@ -991,7 +999,7 @@ function saveEdit() {
     pendingDelete = {idx, locIdx:selectedLocIdx, dataset, code, desc:dataset[idx].descripcion, user, mod, mot, pasillo:u.pasillo, ubicacion:u.ubicacion};
     const remaining = dataset[idx].ubicaciones.length;
     let msg = '¿Eliminar la ubicación <b>' + (isBodega?'S.':'P.') + u.pasillo + ' / ' + u.ubicacion + '</b> del producto <b>' + dataset[idx].descripcion.substring(0,40) + '</b>?';
-    if (remaining===1) msg += '<br><br><b style="color:var(--red)">⚠️ Es la única ubicación. El producto quedará sin ubicación asignada.</b>';
+    if (remaining===1) msg += '<br><br><b style="color:var(--red)">⚠️ Es la única ubicación. Al confirmar, se eliminará el producto completo del JSON.</b>';
     document.getElementById('modal-msg').innerHTML = msg;
     document.getElementById('modal-del').classList.add('open');
     return;
@@ -1009,16 +1017,44 @@ function confirmDelete() {
   const {idx, locIdx, dataset, code, desc, user, mod, mot, pasillo, ubicacion} = pendingDelete;
   const isBodega = mod==='bodega';
   const prefix = isBodega?'S.':'P.';
-  dataset[idx].ubicaciones.splice(locIdx, 1);
-  logChange({ts:now(),user,code,desc,mod,action:'del',detail:'Eliminado '+prefix+pasillo+' / '+ubicacion,motivo:mot});
-  showToast('🗑️ Ubicación eliminada');
-  showSummary(user,desc,'del',code,pasillo,ubicacion,'—','—',mod);
+  const totalAntes = dataset[idx] && Array.isArray(dataset[idx].ubicaciones) ? dataset[idx].ubicaciones.length : 0;
+
+  if (!dataset[idx]) {
+    closeModal();
+    pendingDelete = null;
+    showToast('⚠️ No se encontró el producto para eliminar', 'warn');
+    return;
+  }
+
+  if (totalAntes <= 1) {
+    // Si era la última ubicación, se elimina el producto completo del arreglo.
+    dataset.splice(idx, 1);
+    logChange({
+      ts: now(), user, code, desc, mod, action: 'del',
+      detail: 'Producto eliminado completo. Última ubicación: ' + prefix + pasillo + ' / ' + ubicacion,
+      motivo: mot
+    });
+    showToast('🗑️ Producto eliminado completo');
+  } else {
+    // Si tiene más ubicaciones, solo se elimina la ubicación seleccionada.
+    dataset[idx].ubicaciones.splice(locIdx, 1);
+    logChange({
+      ts: now(), user, code, desc, mod, action: 'del',
+      detail: 'Eliminado ' + prefix + pasillo + ' / ' + ubicacion,
+      motivo: mot
+    });
+    showToast('🗑️ Ubicación eliminada');
+  }
+
+  showSummary(user, desc, 'del', code, pasillo, ubicacion, '—', '—', mod);
   closeModal();
   resetForm();
   buildMapF();
   buildMapB();
+  document.getElementById('badge-f').textContent = '💊 ' + workF.length + ' productos';
+  document.getElementById('badge-b').textContent = '📦 ' + workB.length + ' productos';
   programarGuardadoGitHub();
-  pendingDelete=null;
+  pendingDelete = null;
 }
 
 function closeModal() { document.getElementById('modal-del').classList.remove('open'); }
