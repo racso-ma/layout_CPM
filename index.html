@@ -585,7 +585,7 @@ async function loadFromGitHub() {
 
     buildMapF();
     buildMapB();
-    renderLog();
+    renderLogDiferido();
 
     const msg = '✅ Datos sincronizados · Farmacia: ' + workF.length + ' · Bodega: ' + workB.length;
     showSyncStatus(msg, 5000);
@@ -824,7 +824,7 @@ let selectedLocIdx = -1;
 let pendingDelete = null;
 let changelog = [];
 try { changelog = JSON.parse(localStorage.getItem('laymap_log')||'[]'); } catch(e){}
-renderLog();
+renderLogDiferido();
 
 function setAction(action) {
   currentAction = action;
@@ -1001,7 +1001,7 @@ function now() { return new Date().toLocaleString('es-CL'); }
 function logChange(entry) {
   changelog.unshift(entry);
   try { localStorage.setItem('laymap_log', JSON.stringify(changelog)); } catch(e){}
-  renderLog();
+  renderLogDiferido();
 }
 
 function showSummary(user,desc,action,code,prevPas,prevUbi,newPas,newUbi,mod) {
@@ -1021,20 +1021,29 @@ function showSummary(user,desc,action,code,prevPas,prevUbi,newPas,newUbi,mod) {
 
 function renderLog() {
   const cont = document.getElementById('log-container');
+  if (!cont) return;
   if (!changelog.length) { cont.innerHTML='<div class="log-empty">Sin registros aún.</div>'; return; }
   const apClass = {add:'ap-add',edit:'ap-edit',del:'ap-del'};
   const apLabel = {add:'➕ AGREGAR',edit:'✏️ MODIFICAR',del:'🗑️ ELIMINAR'};
-  const rows = changelog.map(e =>
-    '<tr><td class="td-time">'+e.ts+'</td>' +
-    '<td class="td-user">'+e.user+'</td>' +
-    '<td class="td-mono">'+e.code+'</td>' +
+  const limiteLogPantalla = 10;
+  const aviso = changelog.length > limiteLogPantalla
+    ? '<div style="padding:8px 12px;font-size:11px;color:var(--text-muted)">Mostrando últimos ' + limiteLogPantalla + ' cambios de ' + changelog.length + ' registros. El CSV mantiene el log completo.</div>'
+    : '';
+  const rows = changelog.slice(0, limiteLogPantalla).map(e =>
+    '<tr><td class="td-time">'+(e.ts||'')+'</td>' +
+    '<td class="td-user">'+(e.user||'')+'</td>' +
+    '<td class="td-mono">'+(e.code||'')+'</td>' +
     '<td style="max-width:220px;font-size:12px">'+(e.desc||'').substring(0,45)+'</td>' +
     '<td><span class="action-pill '+apClass[e.action||'edit']+'">'+apLabel[e.action||'edit']+'</span></td>' +
-    '<td style="text-transform:capitalize;font-size:11px;color:var(--text-muted)">'+e.mod+'</td>' +
-    '<td class="td-mono">'+e.detail+'</td>' +
+    '<td style="text-transform:capitalize;font-size:11px;color:var(--text-muted)">'+(e.mod||'')+'</td>' +
+    '<td class="td-mono">'+(e.detail||'')+'</td>' +
     '<td style="font-size:11px;color:var(--text-dim)">'+(e.motivo||'')+'</td></tr>'
   ).join('');
-  cont.innerHTML='<div style="overflow-x:auto"><table class="lt"><thead><tr><th>Fecha/Hora</th><th>Usuario</th><th>Código</th><th>Descripción</th><th>Acción</th><th>Módulo</th><th>Detalle</th><th>Motivo</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+  cont.innerHTML= aviso + '<div style="overflow-x:auto"><table class="lt"><thead><tr><th>Fecha/Hora</th><th>Usuario</th><th>Código</th><th>Descripción</th><th>Acción</th><th>Módulo</th><th>Detalle</th><th>Motivo</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+}
+
+function renderLogDiferido() {
+  setTimeout(renderLog, 50);
 }
 
 function exportLog() {
