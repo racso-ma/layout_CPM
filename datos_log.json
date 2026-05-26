@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:23:23 a. m.",
+    "user": "Francesco",
+    "code": "5062160",
+    "desc": "ATORVASTATINA 20 MG COMP.",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.4/3B → P.20/1B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:22:51 a. m.",
     "user": "Francesco",
     "code": "6450131",
