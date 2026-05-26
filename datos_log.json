@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-05-2026, 8:52:11 a. m.",
+    "user": "Francesco",
+    "code": "6992900",
+    "desc": "AZITROMICINA 500 MG COMP",
+    "mod": "farmacia",
+    "action": "edit",
+    "detail": "P.3/4C → P.20/4B",
+    "motivo": ""
+  },
+  {
     "ts": "26-05-2026, 8:51:42 a. m.",
     "user": "Francesco",
     "code": "6991512",
