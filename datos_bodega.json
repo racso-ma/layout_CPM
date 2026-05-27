@@ -4488,5 +4488,15 @@
         "ubicacion": "2B"
       }
     ]
+  },
+  {
+    "codigo": "43700936",
+    "descripcion": "PAPEL TERMOSENSIBLE PARA ESPIROMETRIA 50MM X 30MT",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2B"
+      }
+    ]
   }
 ]
