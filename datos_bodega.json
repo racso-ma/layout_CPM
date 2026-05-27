@@ -4468,5 +4468,15 @@
         "ubicacion": "2B"
       }
     ]
+  },
+  {
+    "codigo": "999015902",
+    "descripcion": "CEPILLO PARA LAVAR 210 X 95 MM",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2B"
+      }
+    ]
   }
 ]
