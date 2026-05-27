@@ -4358,5 +4358,15 @@
         "ubicacion": "1B"
       }
     ]
+  },
+  {
+    "codigo": "3653896",
+    "descripcion": "GASA CUADRADA 2*2\"",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2A"
+      }
+    ]
   }
 ]
