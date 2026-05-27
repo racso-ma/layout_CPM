@@ -1,5 +1,15 @@
 [
   {
+    "ts": "27-05-2026, 9:18:24 a. m.",
+    "user": "oscar",
+    "code": "3653896",
+    "desc": "GASA CUADRADA 2*2\"",
+    "mod": "bodega",
+    "action": "del",
+    "detail": "Producto eliminado completo (1 ubicaciones). Referencia: S.3 / 3B",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 9:17:05 a. m.",
     "user": "oscar",
     "code": "43700927",
