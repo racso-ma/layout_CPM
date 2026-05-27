@@ -1,5 +1,15 @@
 [
   {
+    "ts": "27-05-2026, 8:57:31 a. m.",
+    "user": "oscar",
+    "code": "3656592",
+    "desc": "COBERTOR TERMICO 1/2 PIEZA SUPERIOR REF. 62200",
+    "mod": "bodega",
+    "action": "add",
+    "detail": "Agregado S.1 / 1A",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 8:56:10 a. m.",
     "user": "oscar",
     "code": "43001501",
