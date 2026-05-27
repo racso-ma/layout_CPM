@@ -4388,5 +4388,15 @@
         "ubicacion": "2A"
       }
     ]
+  },
+  {
+    "codigo": "3653872",
+    "descripcion": "VENDA APOSITO 15*150 CM",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2A"
+      }
+    ]
   }
 ]
