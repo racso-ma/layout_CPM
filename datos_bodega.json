@@ -4382,5 +4382,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "43700903",
+    "descripcion": "MANTA CALEFACTORA ADULTO (MIEMBRO SUPERIOR) CALIMA",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
