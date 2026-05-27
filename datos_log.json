@@ -1,5 +1,15 @@
 [
   {
+    "ts": "27-05-2026, 9:20:29 a. m.",
+    "user": "oscar",
+    "code": "3653822",
+    "desc": "APOSITO NO GAUSE 15 X 20",
+    "mod": "bodega",
+    "action": "del",
+    "detail": "Producto eliminado completo (1 ubicaciones). Referencia: S.3 / 3B",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 9:19:40 a. m.",
     "user": "oscar",
     "code": "3653872",
