@@ -4408,5 +4408,15 @@
         "ubicacion": "1B"
       }
     ]
+  },
+  {
+    "codigo": "6980244",
+    "descripcion": "OPTIRAY 320 MG 100 ML",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1B"
+      }
+    ]
   }
 ]
