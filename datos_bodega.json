@@ -4508,5 +4508,15 @@
         "ubicacion": "3A"
       }
     ]
+  },
+  {
+    "codigo": "3250211",
+    "descripcion": "JERINGA DESECH.TUBERCULINA 1CC C/AG.",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3A"
+      }
+    ]
   }
 ]
