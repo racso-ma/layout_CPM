@@ -4458,5 +4458,15 @@
         "ubicacion": "1B"
       }
     ]
+  },
+  {
+    "codigo": "7600275",
+    "descripcion": "CINTA IMPRESION ERC-22 COD150828-440",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2B"
+      }
+    ]
   }
 ]
