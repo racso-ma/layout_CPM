@@ -4418,5 +4418,15 @@
         "ubicacion": "1B"
       }
     ]
+  },
+  {
+    "codigo": "41102460",
+    "descripcion": "DETERGENTE LIQUI-JET 2 BIDON 3,78 LT (REF 1037-08)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1B"
+      }
+    ]
   }
 ]
