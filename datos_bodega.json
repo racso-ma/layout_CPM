@@ -4368,5 +4368,15 @@
         "ubicacion": "2A"
       }
     ]
+  },
+  {
+    "codigo": "3655571",
+    "descripcion": "GASA NO GAUSE 5X5 NO ESTERIL (USO ESTERILIZACION)",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2A"
+      }
+    ]
   }
 ]
