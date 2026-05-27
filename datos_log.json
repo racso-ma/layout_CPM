@@ -1,5 +1,35 @@
 [
   {
+    "ts": "27-05-2026, 8:50:45 a. m.",
+    "user": "oscar",
+    "code": "43700653",
+    "desc": "ESPECULO NASAL DESECHABLE (ADULTO/PEDIATRICO)",
+    "mod": "bodega",
+    "action": "add",
+    "detail": "Agregado S.1 / 1A",
+    "motivo": ""
+  },
+  {
+    "ts": "27-05-2026, 8:46:45 a. m.",
+    "user": "oscar",
+    "code": "3656630",
+    "desc": "LLAVE TRES PASOS BRAUN (USO EXCLUSIVO URG.IMG. KIT TIVA)",
+    "mod": "bodega",
+    "action": "add",
+    "detail": "Agregado S.1 / 1A",
+    "motivo": ""
+  },
+  {
+    "ts": "27-05-2026, 8:45:03 a. m.",
+    "user": "oscar",
+    "code": "3656630",
+    "desc": "LLAVE TRES PASOS BRAUN (USO EXCLUSIVO URG.IMG. KIT TIVA)",
+    "mod": "bodega",
+    "action": "del",
+    "detail": "Producto eliminado completo (2 ubicaciones). Referencia: S.4 / 4B.3",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 8:38:54 a. m.",
     "user": "oscar",
     "code": "33100189",
