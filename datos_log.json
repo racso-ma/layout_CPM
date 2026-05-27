@@ -1,5 +1,15 @@
 [
   {
+    "ts": "27-05-2026, 9:12:13 a. m.",
+    "user": "oscar",
+    "code": "6980244",
+    "desc": "OPTIRAY 320 MG 100 ML",
+    "mod": "bodega",
+    "action": "del",
+    "detail": "Producto eliminado completo (2 ubicaciones). Referencia: S.Estacionamiento / B. Estadionamiento",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 9:10:00 a. m.",
     "user": "oscar",
     "code": "43700942",
