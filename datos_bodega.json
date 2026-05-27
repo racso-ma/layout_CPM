@@ -4498,5 +4498,15 @@
         "ubicacion": "2B"
       }
     ]
+  },
+  {
+    "codigo": "3656452",
+    "descripcion": "ATTEST SUPER RAPIDO 1492V X 50UN",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2B"
+      }
+    ]
   }
 ]
