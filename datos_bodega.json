@@ -4448,5 +4448,15 @@
         "ubicacion": "2A"
       }
     ]
+  },
+  {
+    "codigo": "43700928",
+    "descripcion": "DETERGENTE MULTIENZIMATICO STERIS BIDON 3,79 LT (REF 1C3708)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1B"
+      }
+    ]
   }
 ]
