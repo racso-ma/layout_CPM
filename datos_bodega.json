@@ -4524,5 +4524,15 @@
         "ubicacion": "3B"
       }
     ]
+  },
+  {
+    "codigo": "3651161",
+    "descripcion": "MASCARILLA ANESTESIA TRANSP. N.5 AZUL",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3C"
+      }
+    ]
   }
 ]
