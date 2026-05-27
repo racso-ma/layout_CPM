@@ -4428,5 +4428,15 @@
         "ubicacion": "2A"
       }
     ]
+  },
+  {
+    "codigo": "3653846",
+    "descripcion": "APOSITO 40*40 CM",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2A"
+      }
+    ]
   }
 ]
