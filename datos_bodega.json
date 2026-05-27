@@ -4524,5 +4524,15 @@
         "ubicacion": "3C"
       }
     ]
+  },
+  {
+    "codigo": "3654058",
+    "descripcion": "CIRCUITO ANESTESIA NIÑO ST. REF 8081",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3C"
+      }
+    ]
   }
 ]
