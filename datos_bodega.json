@@ -4352,5 +4352,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "3656592",
+    "descripcion": "COBERTOR TERMICO 1/2 PIEZA SUPERIOR REF. 62200",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
