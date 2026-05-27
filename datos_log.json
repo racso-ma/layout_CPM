@@ -1,5 +1,15 @@
 [
   {
+    "ts": "27-05-2026, 8:56:10 a. m.",
+    "user": "oscar",
+    "code": "43001501",
+    "desc": "SOLUPREP APLICADOR SOLUCION ANTISEPTICA COLOREADA 35ML (REF 10024)",
+    "mod": "bodega",
+    "action": "add",
+    "detail": "Agregado S.1 / 1A",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 8:50:45 a. m.",
     "user": "oscar",
     "code": "43700653",
