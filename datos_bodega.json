@@ -1314,16 +1314,6 @@
     ]
   },
   {
-    "codigo": "3655571",
-    "descripcion": "GASA NO GAUSE 5X5 NO ESTERIL (USO ESTERILIZACION)",
-    "ubicaciones": [
-      {
-        "pasillo": "3",
-        "ubicacion": "3A"
-      }
-    ]
-  },
-  {
     "codigo": "3656136",
     "descripcion": "SABANA EN U  IMPERMEABLE",
     "ubicaciones": [
