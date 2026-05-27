@@ -4504,5 +4504,15 @@
         "ubicacion": "3A"
       }
     ]
+  },
+  {
+    "codigo": "3651141",
+    "descripcion": "MASCARILLA ANESTESIA TRANS N°3 MORADA",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3B"
+      }
+    ]
   }
 ]
