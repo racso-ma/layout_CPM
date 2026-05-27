@@ -112,20 +112,6 @@
     ]
   },
   {
-    "codigo": "3656630",
-    "descripcion": "LLAVE TRES PASOS BRAUN (USO EXCLUSIVO URG.IMG. KIT TIVA)",
-    "ubicaciones": [
-      {
-        "pasillo": "1",
-        "ubicacion": "1A"
-      },
-      {
-        "pasillo": "4",
-        "ubicacion": "4B.3"
-      }
-    ]
-  },
-  {
     "codigo": "41002872",
     "descripcion": "SOLUPREP ESPONJA ANTISEP.COLOR.X2 .10027",
     "ubicaciones": [
@@ -4330,6 +4316,26 @@
   {
     "codigo": "33100189",
     "descripcion": "PRIOSOL 2K 2 MMOL/L SOLUCION PARA HEMOFILTRACION (REF 8954)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
+  },
+  {
+    "codigo": "3656630",
+    "descripcion": "LLAVE TRES PASOS BRAUN (USO EXCLUSIVO URG.IMG. KIT TIVA)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
+  },
+  {
+    "codigo": "43700653",
+    "descripcion": "ESPECULO NASAL DESECHABLE (ADULTO/PEDIATRICO)",
     "ubicaciones": [
       {
         "pasillo": "1",
