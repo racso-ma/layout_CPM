@@ -252,20 +252,6 @@
     ]
   },
   {
-    "codigo": "6980244",
-    "descripcion": "OPTIRAY 320 MG 100 ML",
-    "ubicaciones": [
-      {
-        "pasillo": "1",
-        "ubicacion": "1B"
-      },
-      {
-        "pasillo": "Estacionamiento",
-        "ubicacion": "B. Estadionamiento"
-      }
-    ]
-  },
-  {
     "codigo": "7800081",
     "descripcion": "CAJA VACIA PORTA CD",
     "ubicaciones": [
