@@ -1,5 +1,15 @@
 [
   {
+    "ts": "27-05-2026, 9:18:47 a. m.",
+    "user": "oscar",
+    "code": "3655571",
+    "desc": "GASA NO GAUSE 5X5 NO ESTERIL (USO ESTERILIZACION)",
+    "mod": "bodega",
+    "action": "del",
+    "detail": "Producto eliminado completo (1 ubicaciones). Referencia: S.3 / 3A",
+    "motivo": ""
+  },
+  {
     "ts": "27-05-2026, 9:18:24 a. m.",
     "user": "oscar",
     "code": "3653896",
