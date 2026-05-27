@@ -4514,5 +4514,15 @@
         "ubicacion": "3B"
       }
     ]
+  },
+  {
+    "codigo": "3451054",
+    "descripcion": "MASCARILLA ANESTESIA N°6",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3B"
+      }
+    ]
   }
 ]
