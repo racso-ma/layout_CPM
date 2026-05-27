@@ -4326,5 +4326,15 @@
         "ubicacion": "B. Estadionamiento"
       }
     ]
+  },
+  {
+    "codigo": "33100189",
+    "descripcion": "PRIOSOL 2K 2 MMOL/L SOLUCION PARA HEMOFILTRACION (REF 8954)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
