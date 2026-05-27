@@ -4498,25 +4498,5 @@
         "ubicacion": "2B"
       }
     ]
-  },
-  {
-    "codigo": "32301470",
-    "descripcion": "CLARISCAN 0,05 MMOL/ML SOLUCION INYECTABLE (ACIDO GADOTÉRICO)",
-    "ubicaciones": [
-      {
-        "pasillo": "2",
-        "ubicacion": "2B"
-      }
-    ]
-  },
-  {
-    "codigo": "3050808",
-    "descripcion": "AGUJA AUTOMÁTICA TRU-CORE II DE 16G X 10 CM (MD763116100X)",
-    "ubicaciones": [
-      {
-        "pasillo": "2",
-        "ubicacion": "2C"
-      }
-    ]
   }
 ]
