@@ -4362,5 +4362,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "3800188",
+    "descripcion": "MEDIA ANTITROMBOTICA XXL",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
