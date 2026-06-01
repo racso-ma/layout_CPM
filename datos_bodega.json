@@ -3420,6 +3420,10 @@
       {
         "pasillo": "Estacionamiento",
         "ubicacion": "B. Estadionamiento"
+      },
+      {
+        "pasillo": "3",
+        "ubicacion": "3E"
       }
     ]
   },
