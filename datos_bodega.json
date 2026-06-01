@@ -4544,5 +4544,15 @@
         "ubicacion": "3D"
       }
     ]
+  },
+  {
+    "codigo": "3656745",
+    "descripcion": "KIT ANESTESIA RIÑON PULPA ESTERIL",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3F"
+      }
+    ]
   }
 ]
