@@ -1,5 +1,15 @@
 [
   {
+    "ts": "01-06-2026, 3:55:10 p. m.",
+    "user": "oscar",
+    "code": "40906437",
+    "desc": "BAJADA INFUSOMAT ALIM. ENTERAL 300CM REF 8700370",
+    "mod": "bodega",
+    "action": "edit",
+    "detail": "S.3/3E → S.3/3F",
+    "motivo": ""
+  },
+  {
     "ts": "01-06-2026, 3:54:21 p. m.",
     "user": "oscar",
     "code": "3656745",
