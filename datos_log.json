@@ -1,5 +1,15 @@
 [
   {
+    "ts": "01-06-2026, 4:27:28 p. m.",
+    "user": "oscar",
+    "code": "3654370",
+    "desc": "KIT DESECH. PACIENTE",
+    "mod": "bodega",
+    "action": "edit",
+    "detail": "S.3/3B → S.3/3F",
+    "motivo": ""
+  },
+  {
     "ts": "01-06-2026, 4:27:11 p. m.",
     "user": "oscar",
     "code": "3656742",
