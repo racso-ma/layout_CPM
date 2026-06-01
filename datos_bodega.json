@@ -1696,20 +1696,6 @@
     ]
   },
   {
-    "codigo": "3656375",
-    "descripcion": "CUBREMESA ARSENALERA REFORZADA",
-    "ubicaciones": [
-      {
-        "pasillo": "3",
-        "ubicacion": "3F"
-      },
-      {
-        "pasillo": "Estacionamiento",
-        "ubicacion": "B. Estadionamiento"
-      }
-    ]
-  },
-  {
     "codigo": "3654435",
     "descripcion": "PACK QUIRURGICO DESECH.DE HOMBRO",
     "ubicaciones": [
