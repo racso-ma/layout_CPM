@@ -4534,5 +4534,15 @@
         "ubicacion": "3C"
       }
     ]
+  },
+  {
+    "codigo": "41403332",
+    "descripcion": "GORRO CIRUJANO DESECHABLE TIPO PASAMONTAÑA",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3C"
+      }
+    ]
   }
 ]
