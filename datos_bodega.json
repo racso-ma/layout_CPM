@@ -1340,20 +1340,6 @@
     ]
   },
   {
-    "codigo": "3656740",
-    "descripcion": "ESPECULO DESECHABLE TALLA S",
-    "ubicaciones": [
-      {
-        "pasillo": "3",
-        "ubicacion": "3C"
-      },
-      {
-        "pasillo": "3",
-        "ubicacion": "3C"
-      }
-    ]
-  },
-  {
     "codigo": "3656742",
     "descripcion": "ESPECULO DESECHABLE TALLA L",
     "ubicaciones": [
