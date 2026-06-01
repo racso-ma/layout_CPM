@@ -4540,5 +4540,15 @@
         "ubicacion": "3F"
       }
     ]
+  },
+  {
+    "codigo": "3656740",
+    "descripcion": "ESPECULO DESECHABLE TALLA S",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3F"
+      }
+    ]
   }
 ]
