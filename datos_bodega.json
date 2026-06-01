@@ -4540,5 +4540,15 @@
         "ubicacion": "3D"
       }
     ]
+  },
+  {
+    "codigo": "3250171",
+    "descripcion": "JERINGA DESECH.20CC S/AG.TERUMO ATORNILLADAS (LUER LOCK)",
+    "ubicaciones": [
+      {
+        "pasillo": "3",
+        "ubicacion": "3D"
+      }
+    ]
   }
 ]
