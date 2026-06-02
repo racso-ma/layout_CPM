@@ -15105,5 +15105,15 @@
         "ubicacion": "5C"
       }
     ]
+  },
+  {
+    "codigo": "43700994",
+    "descripcion": "TUBO ASPIRACION OTICA REUTILIZABLE 1.4 X 70 MM",
+    "ubicaciones": [
+      {
+        "pasillo": "10",
+        "ubicacion": "3B"
+      }
+    ]
   }
 ]
