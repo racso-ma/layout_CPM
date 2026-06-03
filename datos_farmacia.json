@@ -15095,5 +15095,15 @@
         "ubicacion": "3B"
       }
     ]
+  },
+  {
+    "codigo": "43001501",
+    "descripcion": "SOLUPREP ESPONJA ANTISEP. 35 mL",
+    "ubicaciones": [
+      {
+        "pasillo": "5",
+        "ubicacion": "4A"
+      }
+    ]
   }
 ]
