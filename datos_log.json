@@ -1,5 +1,15 @@
 [
   {
+    "ts": "03-06-2026, 4:37:47 p. m.",
+    "user": "Francesco",
+    "code": "41002872",
+    "desc": "SOLUPREP ESPONJA ANTISEP.COLOR.X2 .10027",
+    "mod": "farmacia",
+    "action": "del",
+    "detail": "Producto eliminado completo (2 ubicaciones). Referencia: P.23 / MESÓN",
+    "motivo": "codigo antiguo"
+  },
+  {
     "ts": "03-06-2026, 4:36:51 p. m.",
     "user": "Francesco",
     "code": "43001501",
