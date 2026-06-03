@@ -1,5 +1,15 @@
 [
   {
+    "ts": "03-06-2026, 4:35:33 p. m.",
+    "user": "Francesco",
+    "code": "43001501",
+    "desc": "SOLUPREP ESPONJA ANTISEP. 35 mL",
+    "mod": "farmacia",
+    "action": "add",
+    "detail": "Agregado P.5 / 4A",
+    "motivo": "codigo nuevo"
+  },
+  {
     "ts": "02-06-2026, 11:58:04 a. m.",
     "user": "oscar",
     "code": "43700994",
