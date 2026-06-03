@@ -1208,7 +1208,7 @@ function limpiarCelda(valor) {
 
 function obtenerFilasExportacion(tipo) {
   const esFarmacia = String(tipo).toLowerCase() === 'farmacia';
-  const datos = esFarmacia ? window.workF : window.workB;
+  const datos = esFarmacia ? workF : workB;
 
   if (!Array.isArray(datos)) {
     throw new Error('El arreglo de datos no existe para: ' + tipo);
@@ -1274,7 +1274,7 @@ function exportarExcel(tipo) {
 
     if (filas.length <= 1) {
       showToast('⚠️ No hay datos para exportar en ' + (esFarmacia ? 'Farmacia' : 'Bodega'), 'warn');
-      console.warn('Sin datos para exportar:', tipo, { workF, workB });
+      console.warn('Sin datos para exportar:', tipo, { workF: typeof workF !== 'undefined' ? workF : undefined, workB: typeof workB !== 'undefined' ? workB : undefined });
       return;
     }
 
