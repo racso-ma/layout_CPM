@@ -6363,20 +6363,6 @@
     ]
   },
   {
-    "codigo": "41002872",
-    "descripcion": "SOLUPREP ESPONJA ANTISEP.COLOR.X2 .10027",
-    "ubicaciones": [
-      {
-        "pasillo": "5",
-        "ubicacion": "4A"
-      },
-      {
-        "pasillo": "23",
-        "ubicacion": "MESÓN"
-      }
-    ]
-  },
-  {
     "codigo": "40703828",
     "descripcion": "KIT CIRCUITO AIR SPIRAL FP900PT561",
     "ubicaciones": [
