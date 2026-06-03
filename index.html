@@ -1191,87 +1191,10 @@ setTimeout(updateTokenStatus, 100);
   <!-- SheetJS para exportar Excel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
-function exportarExcel(tipo) {
-  try {
-    const esFarmacia = tipo === 'farmacia';
-    const datosOrigen = esFarmacia ? workF : workB;
-    const datos = Array.isArray(datosOrigen) ? datosOrigen : [];
-    const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
-    const hoja = esFarmacia ? 'Farmacia' : 'Bodega';
+function limpiarCeldaExcel(valor) {
+  if (valor === null || valor === undefined) return '';
 
-    if (typeof XLSX === 'undefined') {
-      console.error('SheetJS no está cargado. Revisa conexión o CDN XLSX.');
-      showToast('⚠️ No se pudo cargar el motor Excel', 'warn');
-      return;
-    }
-
-    const filas = [];
-    datos.forEach(item => {
-      if (!item || typeof item !== 'object') return;
-
-      const codigo = String(item.codigo || '').trim();
-      const descripcion = String(item.descripcion || '').trim();
-      const ubs = Array.isArray(item.ubicaciones) ? item.ubicaciones : [];
-
-      if (ubs.length === 0) {
-        filas.push({
-          'Código': codigo,
-          'Descripción': descripcion,
-          'Pasillo/Sección': '',
-          'Ubicación': ''
-        });
-      } else {
-        ubs.forEach(u => {
-          u = u || {};
-          filas.push({
-            'Código': codigo,
-            'Descripción': descripcion,
-            'Pasillo/Sección': String(u.pasillo || '').trim(),
-            'Ubicación': String(u.ubicacion || '').trim()
-          });
-        });
-      }
-    });
-
-    if (!filas.length) {
-      showToast('⚠️ No hay datos para exportar en ' + hoja, 'warn');
-      return;
-    }
-
-    const ws = XLSX.utils.json_to_sheet(filas);
-    ws['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 20 }, { wch: 24 }];
-
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, hoja);
-
-    const fecha = new Date().toISOString().slice(0, 10);
-    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const blob = new Blob([wbout], {
-      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    });
-
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = nombre + '_' + fecha + '.xlsx';
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-
-    // Importante: no revocar inmediatamente.
-    // En Bodega el archivo puede ser más pesado y algunos navegadores cancelan la descarga si el URL se libera al instante.
-    setTimeout(() => {
-      URL.revokeObjectURL(url);
-      a.remove();
-    }, 1500);
-
-    showToast('✅ Excel exportado: ' + hoja);
-
-  } catch (e) {
-    console.error('Error exportarExcel:', tipo, e);
-    showToast('⚠️ Error al exportar Excel. Revisa consola.', 'warn');
-  }
-}
-</script>
-</body>
-</html>
+  // Excel no permite más de 32.767 caracteres en una celda.
+  // Dejamos margen para evitar que SheetJS falle con datos largos de Bodega.
+  return String(valor)
+    .replace(/[
