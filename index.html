@@ -1193,72 +1193,99 @@ setTimeout(updateTokenStatus, 100);
 <script>
 function limpiarCelda(valor) {
   if (valor === null || valor === undefined) return '';
-  let txt = String(valor);
-  // Excel/SheetJS no acepta algunos caracteres de control ni textos sobre 32.767 caracteres por celda.
-  txt = txt.replace(/[ -
--]/g, ' ');
-  if (txt.length > 30000) txt = txt.slice(0, 30000) + ' ... [texto recortado para exportar]';
-  return txt;
+  let texto = String(valor);
+
+  // Limpia caracteres de control que pueden romper la generación del Excel.
+  texto = texto.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, ' ');
+
+  // Límite seguro por celda para Excel.
+  if (texto.length > 30000) {
+    texto = texto.slice(0, 30000) + ' ... [texto recortado para exportar]';
+  }
+
+  return texto;
 }
 
-function descargarCSV(filas, nombreArchivo) {
-  const csv = filas.map(row => row.map(v => {
-    const txt = limpiarCelda(v).replace(/"/g, '""');
-    return '"' + txt + '"';
-  }).join(';')).join('
-');
+function obtenerFilasExportacion(tipo) {
+  const esFarmacia = String(tipo).toLowerCase() === 'farmacia';
+  const datos = esFarmacia ? window.workF : window.workB;
 
-  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = nombreArchivo.replace('.xlsx', '.csv');
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 3000);
-}
+  if (!Array.isArray(datos)) {
+    throw new Error('El arreglo de datos no existe para: ' + tipo);
+  }
 
-function exportarExcel(tipo) {
-  try {
-    if (typeof XLSX === 'undefined') {
-      showToast('⚠️ No cargó la librería Excel. Revisa internet/CDN.', 'warn');
-      console.error('XLSX no está definido');
+  const filas = [['Código', 'Descripción', 'Pasillo/Sección', 'Ubicación']];
+
+  datos.forEach(item => {
+    const codigo = limpiarCelda(item?.codigo);
+    const desc = limpiarCelda(item?.descripcion);
+    const ubicaciones = Array.isArray(item?.ubicaciones) ? item.ubicaciones : [];
+
+    if (ubicaciones.length === 0) {
+      filas.push([codigo, desc, '', '']);
       return;
     }
 
-    const esFarmacia = tipo === 'farmacia';
-    const datos = esFarmacia ? workF : workB;
-    const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+    ubicaciones.forEach(u => {
+      filas.push([
+        codigo,
+        desc,
+        limpiarCelda(u?.pasillo ?? u?.seccion ?? u?.sector ?? ''),
+        limpiarCelda(u?.ubicacion ?? u?.ubicación ?? u?.posicion ?? '')
+      ]);
+    });
+  });
 
-    if (!Array.isArray(datos) || datos.length === 0) {
+  return filas;
+}
+
+function descargarBlob(blob, nombreArchivo) {
+  const url = URL.createObjectURL(blob);
+  const enlace = document.createElement('a');
+  enlace.href = url;
+  enlace.download = nombreArchivo;
+  enlace.style.display = 'none';
+  document.body.appendChild(enlace);
+  enlace.click();
+  enlace.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+
+function descargarCSV(filas, nombreArchivo) {
+  const csv = filas.map(fila => fila.map(valor => {
+    const texto = limpiarCelda(valor).replace(/"/g, '""');
+    return '"' + texto + '"';
+  }).join(';')).join('\r\n');
+
+  descargarBlob(
+    new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' }),
+    nombreArchivo.replace(/\.xlsx$/i, '.csv')
+  );
+}
+
+function exportarExcel(tipo) {
+  const esFarmacia = String(tipo).toLowerCase() === 'farmacia';
+  const nombreBase = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+  const fecha = new Date().toISOString().slice(0, 10);
+  const nombreArchivo = nombreBase + '_' + fecha + '.xlsx';
+
+  try {
+    const filas = obtenerFilasExportacion(tipo);
+
+    if (filas.length <= 1) {
       showToast('⚠️ No hay datos para exportar en ' + (esFarmacia ? 'Farmacia' : 'Bodega'), 'warn');
-      console.warn('Sin datos para exportar:', tipo, datos);
+      console.warn('Sin datos para exportar:', tipo, { workF, workB });
       return;
     }
 
     showToast('⏳ Preparando Excel de ' + (esFarmacia ? 'Farmacia' : 'Bodega') + '…');
 
-    const filas = [[ 'Código', 'Descripción', 'Pasillo/Sección', 'Ubicación' ]];
-
-    datos.forEach(item => {
-      const codigo = limpiarCelda(item && item.codigo);
-      const desc = limpiarCelda(item && item.descripcion);
-      const ubs = Array.isArray(item && item.ubicaciones) ? item.ubicaciones : [];
-
-      if (ubs.length === 0) {
-        filas.push([codigo, desc, '', '']);
-      } else {
-        ubs.forEach(u => {
-          filas.push([
-            codigo,
-            desc,
-            limpiarCelda(u && u.pasillo),
-            limpiarCelda(u && u.ubicacion)
-          ]);
-        });
-      }
-    });
+    if (typeof XLSX === 'undefined') {
+      console.warn('XLSX no está definido. Se usará CSV.');
+      descargarCSV(filas, nombreArchivo);
+      showToast('✅ CSV exportado: ' + nombreArchivo.replace('.xlsx', '.csv'));
+      return;
+    }
 
     const ws = XLSX.utils.aoa_to_sheet(filas);
     ws['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 20 }, { wch: 24 }];
@@ -1266,49 +1293,31 @@ function exportarExcel(tipo) {
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, esFarmacia ? 'Farmacia' : 'Bodega');
 
-    const fecha = new Date().toISOString().slice(0, 10);
-    const filename = nombre + '_' + fecha + '.xlsx';
+    const salida = XLSX.write(wb, {
+      bookType: 'xlsx',
+      type: 'array',
+      compression: true
+    });
 
-    // writeFile es más estable que crear el Blob manualmente para archivos grandes.
-    try {
-      XLSX.writeFile(wb, filename, { compression: true });
-    } catch (e1) {
-      console.warn('XLSX.writeFile falló, intentando descarga manual:', e1);
-      const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array', compression: true });
-      const blob = new Blob([wbout], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 5000);
-    }
+    descargarBlob(
+      new Blob([salida], {
+        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+      }),
+      nombreArchivo
+    );
 
-    console.log('Exportación OK:', tipo, 'productos:', datos.length, 'filas:', filas.length - 1);
-    setTimeout(() => showToast('✅ Excel exportado: ' + filename), 500);
+    console.log('Exportación OK:', tipo, 'productos:', filas.length - 1);
+    setTimeout(() => showToast('✅ Excel exportado: ' + nombreArchivo), 300);
 
-  } catch (e) {
-    console.error('Error exportarExcel:', tipo, e);
-    showToast('⚠️ Error exportando Excel. Se descargará CSV de respaldo.', 'warn');
+  } catch (error) {
+    console.error('Error exportarExcel:', tipo, error);
 
     try {
-      const esFarmacia = tipo === 'farmacia';
-      const datos = esFarmacia ? workF : workB;
-      const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
-      const fecha = new Date().toISOString().slice(0, 10);
-      const filas = [[ 'Código', 'Descripción', 'Pasillo/Sección', 'Ubicación' ]];
-      (Array.isArray(datos) ? datos : []).forEach(item => {
-        const codigo = limpiarCelda(item && item.codigo);
-        const desc = limpiarCelda(item && item.descripcion);
-        const ubs = Array.isArray(item && item.ubicaciones) ? item.ubicaciones : [];
-        if (ubs.length === 0) filas.push([codigo, desc, '', '']);
-        else ubs.forEach(u => filas.push([codigo, desc, limpiarCelda(u && u.pasillo), limpiarCelda(u && u.ubicacion)]));
-      });
-      descargarCSV(filas, nombre + '_' + fecha + '.xlsx');
-    } catch (e2) {
-      console.error('También falló CSV respaldo:', e2);
+      const filas = obtenerFilasExportacion(tipo);
+      descargarCSV(filas, nombreArchivo);
+      showToast('⚠️ Excel falló, pero se descargó CSV de respaldo.', 'warn');
+    } catch (errorCSV) {
+      console.error('También falló CSV respaldo:', errorCSV);
       showToast('❌ No se pudo exportar. Revisa consola.', 'err');
     }
   }
