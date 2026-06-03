@@ -1192,36 +1192,86 @@ setTimeout(updateTokenStatus, 100);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 function exportarExcel(tipo) {
-  const esFarmacia = tipo === 'farmacia';
-  const datos = esFarmacia ? workF : workB;
-  const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+  try {
+    const esFarmacia = tipo === 'farmacia';
+    const datosOrigen = esFarmacia ? workF : workB;
+    const datos = Array.isArray(datosOrigen) ? datosOrigen : [];
+    const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+    const hoja = esFarmacia ? 'Farmacia' : 'Bodega';
 
-  const filas = [];
-  datos.forEach(item => {
-    const ubs = Array.isArray(item.ubicaciones) ? item.ubicaciones : [];
-    if (ubs.length === 0) {
-      filas.push({ 'Código': item.codigo || '', 'Descripción': item.descripcion || '', 'Pasillo/Sección': '', 'Ubicación': '' });
-    } else {
-      ubs.forEach(u => {
-        filas.push({ 'Código': item.codigo || '', 'Descripción': item.descripcion || '', 'Pasillo/Sección': u.pasillo || '', 'Ubicación': u.ubicacion || '' });
-      });
+    if (typeof XLSX === 'undefined') {
+      console.error('SheetJS no está cargado. Revisa conexión o CDN XLSX.');
+      showToast('⚠️ No se pudo cargar el motor Excel', 'warn');
+      return;
     }
-  });
 
-  const ws = XLSX.utils.json_to_sheet(filas);
-  ws['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 20 }, { wch: 20 }];
+    const filas = [];
+    datos.forEach(item => {
+      if (!item || typeof item !== 'object') return;
 
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, esFarmacia ? 'Farmacia' : 'Bodega');
+      const codigo = String(item.codigo || '').trim();
+      const descripcion = String(item.descripcion || '').trim();
+      const ubs = Array.isArray(item.ubicaciones) ? item.ubicaciones : [];
 
-  const fecha = new Date().toISOString().slice(0, 10);
-  const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-  const blob = new Blob([wbout], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = nombre + '_' + fecha + '.xlsx'; a.click();
-  URL.revokeObjectURL(url);  
+      if (ubs.length === 0) {
+        filas.push({
+          'Código': codigo,
+          'Descripción': descripcion,
+          'Pasillo/Sección': '',
+          'Ubicación': ''
+        });
+      } else {
+        ubs.forEach(u => {
+          u = u || {};
+          filas.push({
+            'Código': codigo,
+            'Descripción': descripcion,
+            'Pasillo/Sección': String(u.pasillo || '').trim(),
+            'Ubicación': String(u.ubicacion || '').trim()
+          });
+        });
+      }
+    });
+
+    if (!filas.length) {
+      showToast('⚠️ No hay datos para exportar en ' + hoja, 'warn');
+      return;
+    }
+
+    const ws = XLSX.utils.json_to_sheet(filas);
+    ws['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 20 }, { wch: 24 }];
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, hoja);
+
+    const fecha = new Date().toISOString().slice(0, 10);
+    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([wbout], {
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = nombre + '_' + fecha + '.xlsx';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+
+    // Importante: no revocar inmediatamente.
+    // En Bodega el archivo puede ser más pesado y algunos navegadores cancelan la descarga si el URL se libera al instante.
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+      a.remove();
+    }, 1500);
+
+    showToast('✅ Excel exportado: ' + hoja);
+
+  } catch (e) {
+    console.error('Error exportarExcel:', tipo, e);
+    showToast('⚠️ Error al exportar Excel. Revisa consola.', 'warn');
   }
+}
 </script>
 </body>
 </html>
