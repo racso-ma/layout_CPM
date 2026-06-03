@@ -1191,10 +1191,128 @@ setTimeout(updateTokenStatus, 100);
   <!-- SheetJS para exportar Excel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
-function limpiarCeldaExcel(valor) {
+function limpiarCelda(valor) {
   if (valor === null || valor === undefined) return '';
+  let txt = String(valor);
+  // Excel/SheetJS no acepta algunos caracteres de control ni textos sobre 32.767 caracteres por celda.
+  txt = txt.replace(/[ -
+-]/g, ' ');
+  if (txt.length > 30000) txt = txt.slice(0, 30000) + ' ... [texto recortado para exportar]';
+  return txt;
+}
 
-  // Excel no permite más de 32.767 caracteres en una celda.
-  // Dejamos margen para evitar que SheetJS falle con datos largos de Bodega.
-  return String(valor)
-    .replace(/[
+function descargarCSV(filas, nombreArchivo) {
+  const csv = filas.map(row => row.map(v => {
+    const txt = limpiarCelda(v).replace(/"/g, '""');
+    return '"' + txt + '"';
+  }).join(';')).join('
+');
+
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = nombreArchivo.replace('.xlsx', '.csv');
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 3000);
+}
+
+function exportarExcel(tipo) {
+  try {
+    if (typeof XLSX === 'undefined') {
+      showToast('⚠️ No cargó la librería Excel. Revisa internet/CDN.', 'warn');
+      console.error('XLSX no está definido');
+      return;
+    }
+
+    const esFarmacia = tipo === 'farmacia';
+    const datos = esFarmacia ? workF : workB;
+    const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+
+    if (!Array.isArray(datos) || datos.length === 0) {
+      showToast('⚠️ No hay datos para exportar en ' + (esFarmacia ? 'Farmacia' : 'Bodega'), 'warn');
+      console.warn('Sin datos para exportar:', tipo, datos);
+      return;
+    }
+
+    showToast('⏳ Preparando Excel de ' + (esFarmacia ? 'Farmacia' : 'Bodega') + '…');
+
+    const filas = [[ 'Código', 'Descripción', 'Pasillo/Sección', 'Ubicación' ]];
+
+    datos.forEach(item => {
+      const codigo = limpiarCelda(item && item.codigo);
+      const desc = limpiarCelda(item && item.descripcion);
+      const ubs = Array.isArray(item && item.ubicaciones) ? item.ubicaciones : [];
+
+      if (ubs.length === 0) {
+        filas.push([codigo, desc, '', '']);
+      } else {
+        ubs.forEach(u => {
+          filas.push([
+            codigo,
+            desc,
+            limpiarCelda(u && u.pasillo),
+            limpiarCelda(u && u.ubicacion)
+          ]);
+        });
+      }
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(filas);
+    ws['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 20 }, { wch: 24 }];
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, esFarmacia ? 'Farmacia' : 'Bodega');
+
+    const fecha = new Date().toISOString().slice(0, 10);
+    const filename = nombre + '_' + fecha + '.xlsx';
+
+    // writeFile es más estable que crear el Blob manualmente para archivos grandes.
+    try {
+      XLSX.writeFile(wb, filename, { compression: true });
+    } catch (e1) {
+      console.warn('XLSX.writeFile falló, intentando descarga manual:', e1);
+      const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array', compression: true });
+      const blob = new Blob([wbout], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+    }
+
+    console.log('Exportación OK:', tipo, 'productos:', datos.length, 'filas:', filas.length - 1);
+    setTimeout(() => showToast('✅ Excel exportado: ' + filename), 500);
+
+  } catch (e) {
+    console.error('Error exportarExcel:', tipo, e);
+    showToast('⚠️ Error exportando Excel. Se descargará CSV de respaldo.', 'warn');
+
+    try {
+      const esFarmacia = tipo === 'farmacia';
+      const datos = esFarmacia ? workF : workB;
+      const nombre = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
+      const fecha = new Date().toISOString().slice(0, 10);
+      const filas = [[ 'Código', 'Descripción', 'Pasillo/Sección', 'Ubicación' ]];
+      (Array.isArray(datos) ? datos : []).forEach(item => {
+        const codigo = limpiarCelda(item && item.codigo);
+        const desc = limpiarCelda(item && item.descripcion);
+        const ubs = Array.isArray(item && item.ubicaciones) ? item.ubicaciones : [];
+        if (ubs.length === 0) filas.push([codigo, desc, '', '']);
+        else ubs.forEach(u => filas.push([codigo, desc, limpiarCelda(u && u.pasillo), limpiarCelda(u && u.ubicacion)]));
+      });
+      descargarCSV(filas, nombre + '_' + fecha + '.xlsx');
+    } catch (e2) {
+      console.error('También falló CSV respaldo:', e2);
+      showToast('❌ No se pudo exportar. Revisa consola.', 'err');
+    }
+  }
+}
+</script>
+</body>
+</html>
