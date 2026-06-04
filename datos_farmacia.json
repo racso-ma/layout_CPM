@@ -15095,5 +15095,15 @@
         "ubicacion": "MESON"
       }
     ]
+  },
+  {
+    "codigo": "43700970",
+    "descripcion": "SET CATETER HAEMOCAT SIGNO 17 CM X 12 FR (REF 7029653)",
+    "ubicaciones": [
+      {
+        "pasillo": "5",
+        "ubicacion": "3B"
+      }
+    ]
   }
 ]
