@@ -1,5 +1,15 @@
 [
   {
+    "ts": "04-06-2026, 4:55:28 p. m.",
+    "user": "Francesco",
+    "code": "43700970",
+    "desc": "SET CATETER HAEMOCAT SIGNO 17 CM X 12 FR (REF 7029653)",
+    "mod": "farmacia",
+    "action": "add",
+    "detail": "Agregado P.5 / 3B",
+    "motivo": "nuevo insumo en farmacia"
+  },
+  {
     "ts": "03-06-2026, 4:38:27 p. m.",
     "user": "Francesco",
     "code": "43001501",
