@@ -7241,16 +7241,6 @@
     ]
   },
   {
-    "codigo": "380071",
-    "descripcion": "SURGICEL UN-KNIT 3 X4 HEMOSTATICO COD 1943",
-    "ubicaciones": [
-      {
-        "pasillo": "6",
-        "ubicacion": "2B"
-      }
-    ]
-  },
-  {
     "codigo": "3800891",
     "descripcion": "SURGICEL FIBRILAR HEMOSTATICO 2 5X5CM JJ411961",
     "ubicaciones": [
@@ -15103,16 +15093,6 @@
       {
         "pasillo": "5",
         "ubicacion": "3B"
-      }
-    ]
-  },
-  {
-    "codigo": "3656081",
-    "descripcion": "ASA DE CORTE/COAGULACIÓN PTA. BOLA 3MM 24FR 27040N",
-    "ubicaciones": [
-      {
-        "pasillo": "10",
-        "ubicacion": "2A"
       }
     ]
   }
