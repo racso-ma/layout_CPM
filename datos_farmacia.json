@@ -15095,5 +15095,15 @@
         "ubicacion": "3B"
       }
     ]
+  },
+  {
+    "codigo": "3800071",
+    "descripcion": "SURGICEL UN-KNIT 3 X4 HEMOSTATICO COD 1943",
+    "ubicaciones": [
+      {
+        "pasillo": "6",
+        "ubicacion": "2B"
+      }
+    ]
   }
 ]
