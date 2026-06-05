@@ -15105,5 +15105,15 @@
         "ubicacion": "3B"
       }
     ]
+  },
+  {
+    "codigo": "3656081",
+    "descripcion": "ASA DE CORTE/COAGULACIÓN PTA. BOLA 3MM 24FR 27040N",
+    "ubicaciones": [
+      {
+        "pasillo": "10",
+        "ubicacion": "2A"
+      }
+    ]
   }
 ]
