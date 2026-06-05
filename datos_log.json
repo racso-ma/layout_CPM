@@ -1,12 +1,12 @@
 [
   {
-    "ts": "05-06-2026, 10:18:21 a. m.",
+    "ts": "05-06-2026, 1:32:26 p. m.",
     "user": "Francesco",
-    "code": "3656081",
-    "desc": "ASA DE CORTE/COAGULACIÓN PTA. BOLA 3MM 24FR 27040N",
+    "code": "380071",
+    "desc": "SURGICEL UN-KNIT 3 X4 HEMOSTATICO COD 1943",
     "mod": "farmacia",
-    "action": "add",
-    "detail": "Agregado P.10 / 2A",
+    "action": "del",
+    "detail": "Producto eliminado completo (1 ubicaciones). Referencia: P.6 / 2B",
     "motivo": ""
   },
   {
