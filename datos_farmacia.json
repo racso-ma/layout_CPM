@@ -15105,5 +15105,15 @@
         "ubicacion": "2B"
       }
     ]
+  },
+  {
+    "codigo": "3350151",
+    "descripcion": "TELA ADHES.MICROPORE 1/2\"X 10 YDS",
+    "ubicaciones": [
+      {
+        "pasillo": "25",
+        "ubicacion": "ESTANTE"
+      }
+    ]
   }
 ]
