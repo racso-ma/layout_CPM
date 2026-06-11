@@ -4496,5 +4496,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "3654372",
+    "descripcion": "SET DE APLICACION GRANUFOAM SMALL",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
