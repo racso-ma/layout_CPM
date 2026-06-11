@@ -4486,5 +4486,15 @@
         "ubicacion": "3F"
       }
     ]
+  },
+  {
+    "codigo": "3654374",
+    "descripcion": "SET DE APLICACIÓN GRANUFOAM MEDIUM",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
