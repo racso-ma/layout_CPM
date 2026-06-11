@@ -1,5 +1,15 @@
 [
   {
+    "ts": "11-06-2026, 1:30:48 p. m.",
+    "user": "oscar",
+    "code": "3654374",
+    "desc": "SET DE APLICACIÓN GRANUFOAM MEDIUM",
+    "mod": "bodega",
+    "action": "add",
+    "detail": "Agregado S.1 / 1A",
+    "motivo": ""
+  },
+  {
     "ts": "09-06-2026, 11:06:12 a. m.",
     "user": "Francesco",
     "code": "3350151",
