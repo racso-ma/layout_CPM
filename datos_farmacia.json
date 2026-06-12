@@ -15115,5 +15115,15 @@
         "ubicacion": "ESTANTE"
       }
     ]
+  },
+  {
+    "codigo": "3696824",
+    "descripcion": "SHAVER AGGRESIVE PLUS 4,0 MM REF: 0375-544-000",
+    "ubicaciones": [
+      {
+        "pasillo": "10",
+        "ubicacion": "4B"
+      }
+    ]
   }
 ]
