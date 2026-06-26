@@ -4506,5 +4506,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "42901475",
+    "descripcion": "OMNISET 1.6 (REF 7211423)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
