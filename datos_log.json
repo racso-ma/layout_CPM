@@ -1,5 +1,15 @@
 [
   {
+    "ts": "26-06-2026, 9:25:02 a. m.",
+    "user": "oscar",
+    "code": "42901475",
+    "desc": "OMNISET 1.6 (REF 7211423)",
+    "mod": "bodega",
+    "action": "add",
+    "detail": "Agregado S.1 / 1A",
+    "motivo": ""
+  },
+  {
     "ts": "16-06-2026, 6:53:27 p. m.",
     "user": "alexandra",
     "code": "32301474",
