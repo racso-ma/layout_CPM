@@ -5480,6 +5480,10 @@
       {
         "pasillo": "4",
         "ubicacion": "4B"
+      },
+      {
+        "pasillo": "2",
+        "ubicacion": "3B"
       }
     ]
   },
