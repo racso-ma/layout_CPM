@@ -7775,6 +7775,10 @@
       {
         "pasillo": "6",
         "ubicacion": "1C"
+      },
+      {
+        "pasillo": "1",
+        "ubicacion": "3C"
       }
     ]
   },
