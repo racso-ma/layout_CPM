@@ -1263,8 +1263,22 @@ function descargarCSV(filas, nombreArchivo) {
   );
 }
 
+function puedeExportarExcel() {
+  // Restricción simple: solo permite exportar si existe un token guardado en este navegador.
+  // Esto evita que visitantes externos descarguen Excel desde el botón de la interfaz.
+  const token = getToken();
+  return isValidToken(token);
+}
+
 function exportarExcel(tipo) {
   const esFarmacia = String(tipo).toLowerCase() === 'farmacia';
+
+  if (!puedeExportarExcel()) {
+    showToast('🔒 Exportación bloqueada: configura el token para descargar Excel.', 'warn');
+    console.warn('Exportación bloqueada: no hay token válido en localStorage/GH.token.');
+    return;
+  }
+
   const nombreBase = esFarmacia ? 'Ubicaciones_Farmacia' : 'Ubicaciones_Bodega';
   const fecha = new Date().toISOString().slice(0, 10);
   const nombreArchivo = nombreBase + '_' + fecha + '.xlsx';
