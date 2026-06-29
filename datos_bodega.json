@@ -4512,8 +4512,8 @@
     "descripcion": "OMNISET 1.6 (REF 7211423)",
     "ubicaciones": [
       {
-        "pasillo": "S1",
-        "ubicacion": "1A"
+        "pasillo": "1",
+        "ubicacion": "2A"
       }
     ]
   }
