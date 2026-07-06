@@ -15135,5 +15135,15 @@
         "ubicacion": "4A"
       }
     ]
+  },
+  {
+    "codigo": "4019694",
+    "descripcion": "THORACOPORT DE 10.5 MM",
+    "ubicaciones": [
+      {
+        "pasillo": "5",
+        "ubicacion": "3C"
+      }
+    ]
   }
 ]
