@@ -15145,5 +15145,15 @@
         "ubicacion": "3C"
       }
     ]
+  },
+  {
+    "codigo": "43700971",
+    "descripcion": "SET CATETER HAEMOCAT SIGNO 20 CM X 12 FR (REF 7029685)",
+    "ubicaciones": [
+      {
+        "pasillo": "5",
+        "ubicacion": "3C"
+      }
+    ]
   }
 ]
