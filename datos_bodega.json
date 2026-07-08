@@ -4526,5 +4526,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "33101488",
+    "descripcion": "PRIOSOL 4K 4 MMOL/L SOLUCION PARA HEMOFILTRACION (REF 8957)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1B"
+      }
+    ]
   }
 ]
