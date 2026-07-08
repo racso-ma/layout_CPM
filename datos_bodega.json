@@ -4546,5 +4546,15 @@
         "ubicacion": "2B"
       }
     ]
+  },
+  {
+    "codigo": "3656664",
+    "descripcion": "AGUJA INYECCCION ESCLEROTERAPIA PARA ENDOSCOPIA ALTA",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2B"
+      }
+    ]
   }
 ]
