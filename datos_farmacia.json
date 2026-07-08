@@ -1698,8 +1698,8 @@
         "ubicacion": "4A"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "5C"
+        "pasillo": "12",
+        "ubicacion": "1C"
       },
       {
         "pasillo": "22",
@@ -1716,8 +1716,8 @@
         "ubicacion": "4A"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "4C"
+        "pasillo": "12",
+        "ubicacion": "2C"
       },
       {
         "pasillo": "22",
@@ -1734,8 +1734,8 @@
         "ubicacion": "4A"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "4C"
+        "pasillo": "12",
+        "ubicacion": "2C"
       }
     ]
   },
@@ -1748,8 +1748,8 @@
         "ubicacion": "4A"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "5B"
+        "pasillo": "12",
+        "ubicacion": "2C"
       },
       {
         "pasillo": "22",
@@ -1766,8 +1766,8 @@
         "ubicacion": "4B"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "4C"
+        "pasillo": "12",
+        "ubicacion": "2C"
       }
     ]
   },
@@ -1780,8 +1780,8 @@
         "ubicacion": "4B"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "5B"
+        "pasillo": "12",
+        "ubicacion": "1C"
       },
       {
         "pasillo": "22",
@@ -1808,8 +1808,8 @@
         "ubicacion": "4B"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "4C"
+        "pasillo": "12",
+        "ubicacion": "2B"
       }
     ]
   },
@@ -1822,8 +1822,8 @@
         "ubicacion": "4B"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "4B"
+        "pasillo": "12",
+        "ubicacion": "3B"
       },
       {
         "pasillo": "23",
@@ -1840,8 +1840,8 @@
         "ubicacion": "4B"
       },
       {
-        "pasillo": "4",
-        "ubicacion": "4B"
+        "pasillo": "12",
+        "ubicacion": "3B"
       },
       {
         "pasillo": "23",
@@ -2970,8 +2970,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -2984,8 +2984,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3B"
+        "pasillo": "4",
+        "ubicacion": "5C"
       }
     ]
   },
@@ -3068,8 +3068,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3082,8 +3082,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3096,8 +3096,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3110,8 +3110,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3138,8 +3138,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3152,8 +3152,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3194,8 +3194,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3208,8 +3208,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3223,7 +3223,7 @@
       },
       {
         "pasillo": "20",
-        "ubicacion": "1A"
+        "ubicacion": "1B"
       }
     ]
   },
@@ -3236,8 +3236,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1A"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3279,7 +3279,7 @@
       },
       {
         "pasillo": "20",
-        "ubicacion": "1A"
+        "ubicacion": "1B"
       }
     ]
   },
@@ -3293,7 +3293,7 @@
       },
       {
         "pasillo": "20",
-        "ubicacion": "1A"
+        "ubicacion": "1B"
       }
     ]
   },
@@ -3306,8 +3306,8 @@
         "ubicacion": "3A"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3334,8 +3334,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3376,8 +3376,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3390,8 +3390,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3404,8 +3404,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -3418,8 +3418,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3474,8 +3474,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3488,8 +3488,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -3502,8 +3502,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3540,8 +3540,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -3554,8 +3554,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -3592,8 +3592,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -3606,8 +3606,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -3634,8 +3634,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2B"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -3658,8 +3658,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2B"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -3672,8 +3672,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2B"
+        "pasillo": "4",
+        "ubicacion": "4B"
       }
     ]
   },
@@ -3728,8 +3728,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2B"
+        "pasillo": "4",
+        "ubicacion": "4B"
       }
     ]
   },
@@ -3742,8 +3742,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "2B"
+        "pasillo": "4",
+        "ubicacion": "4B"
       }
     ]
   },
@@ -3808,8 +3808,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -3864,8 +3864,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4B"
       }
     ]
   },
@@ -3902,8 +3902,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -3916,8 +3916,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -3930,8 +3930,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -3944,8 +3944,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -3968,8 +3968,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -3982,8 +3982,8 @@
         "ubicacion": "3B"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4A"
       }
     ]
   },
@@ -4100,8 +4100,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3B"
+        "pasillo": "4",
+        "ubicacion": "5C"
       }
     ]
   },
@@ -4186,8 +4186,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "4A"
+        "pasillo": "4",
+        "ubicacion": "5C"
       }
     ]
   },
@@ -4200,8 +4200,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "4A"
+        "pasillo": "4",
+        "ubicacion": "5C"
       }
     ]
   },
@@ -4215,7 +4215,7 @@
       },
       {
         "pasillo": "20",
-        "ubicacion": "4A"
+        "ubicacion": "3B"
       }
     ]
   },
@@ -4229,7 +4229,7 @@
       },
       {
         "pasillo": "20",
-        "ubicacion": "4A"
+        "ubicacion": "3B"
       }
     ]
   },
@@ -4318,8 +4318,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4B"
       }
     ]
   },
@@ -4426,8 +4426,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "4B"
+        "pasillo": "3",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -4440,8 +4440,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "4B"
+        "pasillo": "3",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -4454,8 +4454,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "4B"
+        "pasillo": "3",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -4468,8 +4468,8 @@
         "ubicacion": "3C"
       },
       {
-        "pasillo": "20",
-        "ubicacion": "4B"
+        "pasillo": "3",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -5368,8 +5368,8 @@
     "descripcion": "SULFAMETOXAZOL/TRIMETOPRIMA 800MG/160MG CM",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "4B"
+        "pasillo": "3",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -5428,8 +5428,8 @@
     "descripcion": "CONDROSULF 800 MG",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "3A"
       }
     ]
   },
@@ -5438,8 +5438,8 @@
     "descripcion": "BETAHISTINA 24 MG COM.",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -5448,8 +5448,8 @@
     "descripcion": "BISOPROLOL 1,25MG",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "1B"
+        "pasillo": "4",
+        "ubicacion": "3B"
       }
     ]
   },
@@ -5478,8 +5478,8 @@
     "descripcion": "LEVOCETIRIZINA 5 MG COM.",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "3A"
+        "pasillo": "4",
+        "ubicacion": "4B"
       }
     ]
   },
@@ -5488,8 +5488,8 @@
     "descripcion": "EBATENE 8MG",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "2A"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -5498,8 +5498,8 @@
     "descripcion": "FAMOTIDINA 40 MG COMP VO",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "2B"
+        "pasillo": "4",
+        "ubicacion": "4C"
       }
     ]
   },
@@ -5518,8 +5518,8 @@
     "descripcion": "SUPOSITORIO GLICERINA ADULTO",
     "ubicaciones": [
       {
-        "pasillo": "20",
-        "ubicacion": "4A"
+        "pasillo": "4",
+        "ubicacion": "5C"
       }
     ]
   },
@@ -8569,8 +8569,8 @@
     "descripcion": "MEDIA ANTITROMBOTICA M",
     "ubicaciones": [
       {
-        "pasillo": "4",
-        "ubicacion": "3A"
+        "pasillo": "7",
+        "ubicacion": "5A"
       }
     ]
   },
@@ -8579,8 +8579,8 @@
     "descripcion": "MEDIA ANTITROMBOTICA S",
     "ubicaciones": [
       {
-        "pasillo": "4",
-        "ubicacion": "3A"
+        "pasillo": "7",
+        "ubicacion": "5A"
       }
     ]
   },
@@ -8589,8 +8589,8 @@
     "descripcion": "MEDIA ANTITROMBOTICA L",
     "ubicaciones": [
       {
-        "pasillo": "4",
-        "ubicacion": "4A"
+        "pasillo": "7",
+        "ubicacion": "5B"
       }
     ]
   },
@@ -8599,8 +8599,8 @@
     "descripcion": "MEDIA ANTITROMBOTICA XL",
     "ubicaciones": [
       {
-        "pasillo": "4",
-        "ubicacion": "4A"
+        "pasillo": "7",
+        "ubicacion": "5B"
       }
     ]
   },
@@ -8609,8 +8609,8 @@
     "descripcion": "MEDIA ANTITROMBOTICA XXL",
     "ubicaciones": [
       {
-        "pasillo": "4",
-        "ubicacion": "5A"
+        "pasillo": "7",
+        "ubicacion": "5C"
       }
     ]
   },
@@ -12721,8 +12721,8 @@
     "descripcion": "JERINGA DESECH.50CC S/AG. LUER LOCK (KIT TIVA) (REF 300865)",
     "ubicaciones": [
       {
-        "pasillo": "4",
-        "ubicacion": "4B"
+        "pasillo": "12",
+        "ubicacion": "3B"
       },
       {
         "pasillo": "23",
@@ -15092,7 +15092,7 @@
     "ubicaciones": [
       {
         "pasillo": "5",
-        "ubicacion": "3C"
+        "ubicacion": "3B"
       }
     ]
   },
@@ -15133,26 +15133,6 @@
       {
         "pasillo": "12",
         "ubicacion": "4A"
-      }
-    ]
-  },
-  {
-    "codigo": "4019694",
-    "descripcion": "THORACOPORT DE 10.5 MM",
-    "ubicaciones": [
-      {
-        "pasillo": "5",
-        "ubicacion": "3C"
-      }
-    ]
-  },
-  {
-    "codigo": "43700971",
-    "descripcion": "SET CATETER HAEMOCAT SIGNO 20 CM X 12 FR (REF 7029685)",
-    "ubicaciones": [
-      {
-        "pasillo": "5",
-        "ubicacion": "3C"
       }
     ]
   }
