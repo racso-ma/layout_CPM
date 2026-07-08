@@ -4516,5 +4516,15 @@
         "ubicacion": "2A"
       }
     ]
+  },
+  {
+    "codigo": "33101487",
+    "descripcion": "PRIOSOL S/K SOLUCION SIN POTASIO (REF 8955)",
+    "ubicaciones": [
+      {
+        "pasillo": "1",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
