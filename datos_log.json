@@ -1,5 +1,15 @@
 [
   {
+    "ts": "08-07-2026, 3:34:08 p. m.",
+    "user": "oscar",
+    "code": "33100189",
+    "desc": "PRIOSOL 2K 2 MMOL/L SOLUCION PARA HEMOFILTRACION (REF 8954)",
+    "mod": "bodega",
+    "action": "edit",
+    "detail": "S.1/1A → S.1/1B",
+    "motivo": ""
+  },
+  {
     "ts": "08-07-2026, 3:33:18 p. m.",
     "user": "oscar",
     "code": "33101488",
