@@ -1,13 +1,13 @@
 [
   {
-    "ts": "13-07-2026, 1:34:34 p. m.",
-    "user": "Francesco",
-    "code": "32902103",
-    "desc": "Azul de tripan 0,05%",
+    "ts": "13-07-2026, 4:55:59 p. m.",
+    "user": "Manuel Brito",
+    "code": "43700871",
+    "desc": "Sensor de Temperatura de inyectado PICCO (PV4046)",
     "mod": "farmacia",
     "action": "add",
-    "detail": "Agregado P.5 / 2A",
-    "motivo": ""
+    "detail": "Agregado P.12 / B3",
+    "motivo": "No estaba en layout"
   },
   {
     "ts": "08-07-2026, 4:20:02 p. m.",
