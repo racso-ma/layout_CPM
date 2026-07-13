@@ -15137,12 +15137,12 @@
     ]
   },
   {
-    "codigo": "32902103",
-    "descripcion": "Azul de tripan 0,05%",
+    "codigo": "43700871",
+    "descripcion": "Sensor de Temperatura de inyectado PICCO (PV4046)",
     "ubicaciones": [
       {
-        "pasillo": "5",
-        "ubicacion": "2A"
+        "pasillo": "12",
+        "ubicacion": "B3"
       }
     ]
   }
