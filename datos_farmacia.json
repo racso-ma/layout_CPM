@@ -15135,5 +15135,15 @@
         "ubicacion": "4A"
       }
     ]
+  },
+  {
+    "codigo": "32902103",
+    "descripcion": "Azul de tripan 0,05%",
+    "ubicaciones": [
+      {
+        "pasillo": "5",
+        "ubicacion": "2A"
+      }
+    ]
   }
 ]
