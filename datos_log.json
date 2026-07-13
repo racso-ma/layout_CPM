@@ -1,5 +1,15 @@
 [
   {
+    "ts": "13-07-2026, 1:34:34 p. m.",
+    "user": "Francesco",
+    "code": "32902103",
+    "desc": "Azul de tripan 0,05%",
+    "mod": "farmacia",
+    "action": "add",
+    "detail": "Agregado P.5 / 2A",
+    "motivo": ""
+  },
+  {
     "ts": "08-07-2026, 4:20:02 p. m.",
     "user": "oscar",
     "code": "3656664",
