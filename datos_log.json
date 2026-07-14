@@ -1,5 +1,15 @@
 [
   {
+    "ts": "14-07-2026, 4:51:45 p. m.",
+    "user": "Francesco",
+    "code": "3101738",
+    "desc": "BIOSYN 3/0 V-20 GM122",
+    "mod": "farmacia",
+    "action": "add",
+    "detail": "Agregado P.6 / 1A",
+    "motivo": ""
+  },
+  {
     "ts": "14-07-2026, 4:51:02 p. m.",
     "user": "Francesco",
     "code": "3101738",
