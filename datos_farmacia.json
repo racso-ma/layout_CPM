@@ -6503,20 +6503,6 @@
     ]
   },
   {
-    "codigo": "3101738",
-    "descripcion": "BIOSYN 3/0P-14SM-5679G/Y936H-MSP936H",
-    "ubicaciones": [
-      {
-        "pasillo": "6",
-        "ubicacion": "1A"
-      },
-      {
-        "pasillo": "23",
-        "ubicacion": "MESÓN"
-      }
-    ]
-  },
-  {
     "codigo": "3101714",
     "descripcion": "ETHILON 10/0 TG-140-8 7718 OFTALMICO",
     "ubicaciones": [
