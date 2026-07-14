@@ -15131,5 +15131,15 @@
         "ubicacion": "B3"
       }
     ]
+  },
+  {
+    "codigo": "3101738",
+    "descripcion": "BIOSYN 3/0 V-20 GM122",
+    "ubicaciones": [
+      {
+        "pasillo": "6",
+        "ubicacion": "1A"
+      }
+    ]
   }
 ]
