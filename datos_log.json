@@ -1,5 +1,15 @@
 [
   {
+    "ts": "14-07-2026, 4:51:02 p. m.",
+    "user": "Francesco",
+    "code": "3101738",
+    "desc": "BIOSYN 3/0P-14SM-5679G/Y936H-MSP936H",
+    "mod": "farmacia",
+    "action": "del",
+    "detail": "Producto eliminado completo (2 ubicaciones). Referencia: P.23 / MESÓN",
+    "motivo": ""
+  },
+  {
     "ts": "13-07-2026, 4:55:59 p. m.",
     "user": "Manuel Brito",
     "code": "43700871",
