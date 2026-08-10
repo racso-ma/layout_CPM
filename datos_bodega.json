@@ -4556,5 +4556,15 @@
         "ubicacion": "2B"
       }
     ]
+  },
+  {
+    "codigo": "3451135",
+    "descripcion": "STERIKING RB-50 7.5 X 100",
+    "ubicaciones": [
+      {
+        "pasillo": "2",
+        "ubicacion": "2D"
+      }
+    ]
   }
 ]
