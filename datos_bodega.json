@@ -4566,5 +4566,15 @@
         "ubicacion": "2D"
       }
     ]
+  },
+  {
+    "codigo": "43700930",
+    "descripcion": "PAPEL TERMICO AUTOCLAVE 57MM X 20MTS (REF P129359008)",
+    "ubicaciones": [
+      {
+        "pasillo": "ESTACIONAMIENTO",
+        "ubicacion": "B. ESTACIONAMIENTO"
+      }
+    ]
   }
 ]
