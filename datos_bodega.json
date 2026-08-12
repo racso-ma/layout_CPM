@@ -4576,5 +4576,15 @@
         "ubicacion": "B. ESTACIONAMIENTO"
       }
     ]
+  },
+  {
+    "codigo": "3500091",
+    "descripcion": "BAJA LENGUA DESECH. MADERA",
+    "ubicaciones": [
+      {
+        "pasillo": "4",
+        "ubicacion": "4A.3"
+      }
+    ]
   }
 ]
