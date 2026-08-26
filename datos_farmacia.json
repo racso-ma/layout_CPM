@@ -15141,5 +15141,15 @@
         "ubicacion": "1A"
       }
     ]
+  },
+  {
+    "codigo": "5071437",
+    "descripcion": "SANDOSTATIN 0.1 MG / 1 ML",
+    "ubicaciones": [
+      {
+        "pasillo": "REFRIGERADOR",
+        "ubicacion": "REFRIGERADOR"
+      }
+    ]
   }
 ]
