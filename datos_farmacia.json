@@ -15151,5 +15151,15 @@
         "ubicacion": "REFRIGERADOR"
       }
     ]
+  },
+  {
+    "codigo": "3800987",
+    "descripcion": "LIPOVENOS MCT 20% EMULSION LIPIDICA (SmofLipid 20%)",
+    "ubicaciones": [
+      {
+        "pasillo": "16",
+        "ubicacion": "ESTANTE"
+      }
+    ]
   }
 ]
