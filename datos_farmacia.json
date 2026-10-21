@@ -15161,5 +15161,15 @@
         "ubicacion": "ESTANTE"
       }
     ]
+  },
+  {
+    "codigo": "5080738",
+    "descripcion": "PRIVIGEN 5% 50ML (INMUNOGLOBOLINA HUMANA)",
+    "ubicaciones": [
+      {
+        "pasillo": "MUEBLE QF",
+        "ubicacion": "1"
+      }
+    ]
   }
 ]
