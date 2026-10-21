@@ -1,5 +1,15 @@
 [
   {
+    "ts": "21-10-2026, 6:11:20 p. m.",
+    "user": "Manuel Brito",
+    "code": "33100098",
+    "desc": "ACTILYSE 50 ML",
+    "mod": "farmacia",
+    "action": "add",
+    "detail": "Agregado P.MUEBLE QF / 2",
+    "motivo": ""
+  },
+  {
     "ts": "21-10-2026, 6:10:07 p. m.",
     "user": "Manuel Brito",
     "code": "5080738",
