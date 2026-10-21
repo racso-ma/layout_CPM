@@ -15171,5 +15171,15 @@
         "ubicacion": "1"
       }
     ]
+  },
+  {
+    "codigo": "33100098",
+    "descripcion": "ACTILYSE 50 ML",
+    "ubicaciones": [
+      {
+        "pasillo": "MUEBLE QF",
+        "ubicacion": "2"
+      }
+    ]
   }
 ]
