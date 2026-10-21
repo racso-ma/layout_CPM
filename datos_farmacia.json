@@ -15181,5 +15181,15 @@
         "ubicacion": "2"
       }
     ]
+  },
+  {
+    "codigo": "31500134",
+    "descripcion": "ANIDULAFUNGINA 100 MG. FRASCO AMPOLLA (ECALTA)",
+    "ubicaciones": [
+      {
+        "pasillo": "15",
+        "ubicacion": "REFRIGERADOR"
+      }
+    ]
   }
 ]
