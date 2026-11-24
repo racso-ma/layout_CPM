@@ -1,5 +1,15 @@
 [
   {
+    "ts": "24-11-2026, 8:22:05 a. m.",
+    "user": "oscar",
+    "code": "3750083",
+    "desc": "DRENAJE BLAKE 19 FR C/ TROCAR (COD. 2231)",
+    "mod": "bodega",
+    "action": "edit",
+    "detail": "S.4/4A.3 → S.4/4C.2",
+    "motivo": ""
+  },
+  {
     "ts": "21-10-2026, 6:14:47 p. m.",
     "user": "Manuel Brito",
     "code": "3656081",
